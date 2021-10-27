@@ -1,0 +1,19 @@
+{
+  "name": "bestest",
+  "version": "0.0.1",
+  "description": "Tiny test library with async and nesting support",
+  "main": "bestest.js",
+  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jakobrosenberg@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "picomatch": "^2.3.0"
+  }
+}
