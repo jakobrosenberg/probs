@@ -13,6 +13,7 @@
   "author": "jakobrosenberg@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "colorette": "^2.0.16",
     "commander": "^8.3.0",
     "picomatch": "^2.3.0"
   }
