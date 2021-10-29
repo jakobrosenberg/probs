@@ -1,21 +1,8 @@
 /**
  * @callback Test
  * @param {string} description
- * @param {({test: Test, asyncTest:AsyncTest})=>void} callback
+ * @param {(test: Test)=>void} callback
  */
-
-/**
- * @callback AsyncTest
- * @param {string} description
- * @param {({test: Test, asyncTest:AsyncTest})=>Promise<void>} callback
- */
-
-
-/**
- * @global
- * @type {AsyncTest}
- */
-let asyncTest
 
 /**
  * @global
@@ -28,3 +15,6 @@ let test
  * @type {import('assert')}
  */
 let assert
+
+
+/** @typedef {"fail"|"pass"|"skipped"} Status */
