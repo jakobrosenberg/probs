@@ -1,8 +1,8 @@
 {
-  "name": "bestest",
+  "name": "testly",
   "version": "0.0.1",
   "description": "Tiny test library with async and nesting support",
-  "main": "bestest.js",
+  "main": "testly.js",
   "type": "module",
   "directories": {
     "test": "test"
