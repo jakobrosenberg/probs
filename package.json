@@ -1,6 +1,6 @@
 {
   "name": "probs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tiny test library with async and nesting support",
   "main": "lib/resolver.js",
   "bin": "lib/cli.js",
