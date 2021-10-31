@@ -17,4 +17,8 @@ let test
 let assert
 
 
-/** @typedef {"fail"|"pass"|"skipped"} Status */
+/**
+ *  @typedef {"fail"|"pass"|"skipped"} Status
+ *  @typedef {"pending"|"started"|"finished"} State
+ *  @typedef {string[]} Scope
+ **/
