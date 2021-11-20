@@ -9,7 +9,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "probs test -i test/internal",
+    "test": "probs test -i **/_tests",
     "test-watch": "nodemon --exec npm run test"
   },
   "author": "jakobrosenberg@gmail.com",
