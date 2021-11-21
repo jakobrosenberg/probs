@@ -1,4 +1,4 @@
-import { delay } from "./util.js"
+import { delay } from "../util.js"
 
 let str = ''
 
