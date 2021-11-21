@@ -2,7 +2,8 @@
     "compilerOptions": {
         "checkJs": true,        
         "target": "ESNext",
-        "module": "ES2020"
+        "module": "ES2020",
+        "moduleResolution": "node"
     },
     "include": ["*.js", "**/*.js"],
     "exclude": ["node_modules"]
