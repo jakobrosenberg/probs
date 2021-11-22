@@ -29,12 +29,10 @@ test('before-all runs before all', (test, { beforeAll, afterAll }) => {
 
 test('second root test', async () => {
     await delay(100)
-    console.log('foo2')
     status += '>5second'
 })
 
 test('third root test', async () => {
     await delay(200)
-    console.log('foo3')
     status += '>6third'
 })
