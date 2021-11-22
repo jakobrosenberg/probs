@@ -6,7 +6,7 @@ wip testing framework
 
 ### Custom Globals
 
-Probs lets use set your own globals or overwrite the included ones.
+**Probs** lets you set your own globals or overwrite the included ones.
 To do this, we use `setupFile`.
 Since each file runs in a separate worker, there's no risk of polluting the globals or prototypes of other test files.
 
@@ -15,7 +15,7 @@ Since each file runs in a separate worker, there's no risk of polluting the glob
 
 export default {
   setupFile: async (id) => {
-    // we're only providing a browser for each file that match test/e2e/**
+    // we're only providing a browser for files that match test/e2e/**
     if (id.match('test/e2e/')) {
       global.browser = await chromium.launch()
     }
@@ -25,7 +25,7 @@ export default {
 
 ### Custom Context
 
-Each test provides context to its scope. We can set the scope by adding a `context` to our config.
+Each test provides context to its callback. We can set the scope by adding a `context` to our config.
 The `context` function will serve as middleware for the existing scope.
 
 ```javascript
@@ -46,3 +46,14 @@ test('can access context', (test, { scopeString }) => {
   assert.equal(scopeString, 'test/file.test.js > can access context')
 })
 ```
+
+### How it Works
+
+Each test file gets a dedicated worker which runs the test file.
+
+A worker lifecycle boils down to:
+1. set globals
+2. run `setupFile` callback
+3. import testFile
+
+
