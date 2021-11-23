@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/jakobrosenberg/bestest/compare/v0.1.0...v0.1.1) (2021-11-23)
+
+
+### Bug Fixes
+
+* hookar was missing ([9156ba2](https://github.com/jakobrosenberg/bestest/commit/9156ba2cc9c9b97ddb6767e5ac3e1d35ecf75316))
+
 ## [0.1.0](https://github.com/jakobrosenberg/bestest/compare/v0.0.2...v0.1.0) (2021-11-23)
 
 
