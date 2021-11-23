@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/jakobrosenberg/bestest/compare/v0.0.2...v0.1.0) (2021-11-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* replaced queued test with added test
+
+### Features
+
+* added --ignore ([1f2c409](https://github.com/jakobrosenberg/bestest/commit/1f2c409a3ddd0112e982704bdc298751907846af))
+* added before/after Each/All hooks ([5a99265](https://github.com/jakobrosenberg/bestest/commit/5a99265847ab86301959c3b2237dc0b02d19b659))
+* added it and describe aliases ([18a84fb](https://github.com/jakobrosenberg/bestest/commit/18a84fbd35e74eb0e9f1379a17a54cdd855a4207))
+* added jsonReporter ([f33830f](https://github.com/jakobrosenberg/bestest/commit/f33830fad7012aca85e2b6f3887fa09939738396))
+* added scoped configs ([28a4557](https://github.com/jakobrosenberg/bestest/commit/28a45573ed29ec5370e45998092ce8393257defa))
+* state helper and improved output ([08915fd](https://github.com/jakobrosenberg/bestest/commit/08915fd526fd7c8b72ecb62c42533cf481dda37d))
+
+
+### Bug Fixes
+
+* better parsing of worker number ([8103e35](https://github.com/jakobrosenberg/bestest/commit/8103e3525c55492c00e5565c5c4803dd5771ac55))
+* console reporter false partial match ([c0c043b](https://github.com/jakobrosenberg/bestest/commit/c0c043be3df060a9a1a9709f4f89e3a0c166e073))
+* context callback could break probs ([1e0d5ee](https://github.com/jakobrosenberg/bestest/commit/1e0d5ee28e5df4869fd8d632b064788ab4ad6ae2))
+* files without tests would throw error ([b0c1fc8](https://github.com/jakobrosenberg/bestest/commit/b0c1fc813035b1776c42be7d8057c0c22486afd9))
+* improvements & bug fixes for test runner ([67d3be7](https://github.com/jakobrosenberg/bestest/commit/67d3be78e82df1c712d660c90a011777ed0db92b))
+* lots of fixes and refactors ([92edef7](https://github.com/jakobrosenberg/bestest/commit/92edef74b2cf3d4bd9e6a7bb83fa183597d0a442))
+* missing json reporter export ([93ed2db](https://github.com/jakobrosenberg/bestest/commit/93ed2dbcd9fa5ce746ae0d5bb50c19e3e45811ac))
+* reporter would throw error on missing hook ([d41caef](https://github.com/jakobrosenberg/bestest/commit/d41caef1b9ea33e2ab2669aeb41ff636edd0ae7c))
+* state manager wasn't stringable ([7bff303](https://github.com/jakobrosenberg/bestest/commit/7bff303ba4a8dcaaba368671eb60d922b898cd96))
+* wrong path should throw error ([359ad61](https://github.com/jakobrosenberg/bestest/commit/359ad61437172c62fba4a21b80165821f45ddcbe))
+
+
+* replaced queued test with added test ([cfd2428](https://github.com/jakobrosenberg/bestest/commit/cfd24286dd28dbee663e7634b81857132a7a352a))
+
 ### [0.0.2](https://github.com/jakobrosenberg/bestest/compare/v0.0.1...v0.0.2) (2021-10-30)
 
 
