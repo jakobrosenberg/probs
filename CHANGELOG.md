@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/jakobrosenberg/bestest/compare/v0.1.1...v0.1.2) (2021-11-26)
+
+
+### Features
+
+* added types ([b4bb953](https://github.com/jakobrosenberg/bestest/commit/b4bb953eb27357e160d87395ef019ad72ebb5c4e))
+
 ### [0.1.1](https://github.com/jakobrosenberg/bestest/compare/v0.1.0...v0.1.1) (2021-11-23)
 
 
