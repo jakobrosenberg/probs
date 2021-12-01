@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/jakobrosenberg/bestest/compare/v0.1.2...v0.1.3) (2021-12-01)
+
+
+### Features
+
+* allow worker to be configured ([4030075](https://github.com/jakobrosenberg/bestest/commit/403007552210dde78d00fa96b12464ce14777dce))
+
 ### [0.1.2](https://github.com/jakobrosenberg/bestest/compare/v0.1.1...v0.1.2) (2021-11-26)
 
 
