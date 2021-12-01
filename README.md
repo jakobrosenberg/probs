@@ -47,6 +47,22 @@ test('can access context', (test, { scopeString }) => {
 })
 ```
 
+### Worker configuration
+Each test runs inside its own worker. To configure a worker, we can add `worker` to the config.
+
+```javascript
+// probs.config.js
+
+export default {
+  worker: (ctx) => ({
+    env: { environment: 'test' },
+    execArgv: ['--experimental-loader', 'svelte-esm-loader', '--no-warnings'],
+  }),
+}
+```
+
+*For a full list of options, please refer to https://nodejs.org/api/worker_threads.html#new-workerfilename-options*
+
 ### How it Works
 
 Each test file gets a dedicated worker which runs the test file.
@@ -55,5 +71,3 @@ A worker lifecycle boils down to:
 1. set globals
 2. run `setupFile` callback
 3. import testFile
-
-
