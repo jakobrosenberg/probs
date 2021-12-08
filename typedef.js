@@ -8,17 +8,32 @@
  * @global
  * @type {Test}
  */
-let test
+let test;
 
 /**
  * @global
  * @type {import('assert')}
  */
-let assert
-
+let assert;
 
 /**
  *  @typedef {"fail"|"pass"|"skipped"} Status
  *  @typedef {"pending"|"started"|"finished"} State
  *  @typedef {string[]} Scope
  **/
+
+/**
+ * @typedef {object} ProbsConfigContextCtx
+ * @prop {string[]} scope
+ */
+
+/**
+ * @typedef {object} ProbsConfigOptions
+ * @prop {function({file:string})} worker
+ * @prop {function(string)} setupFile
+ * @prop {function(ProbsConfigContextCtx):ProbsConfigContextCtx} context
+ */
+
+/**
+ * @typedef {Partial<ProbsConfigOptions>} ProbsConfig
+ */
