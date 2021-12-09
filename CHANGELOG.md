@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/jakobrosenberg/bestest/compare/v0.1.4...v0.1.5) (2021-12-09)
+
+
+### Bug Fixes
+
+* setupFile should be async ([eed0a69](https://github.com/jakobrosenberg/bestest/commit/eed0a69920f7a3479581c6925a4c227271672380))
+
 ### [0.1.4](https://github.com/jakobrosenberg/bestest/compare/v0.1.3...v0.1.4) (2021-12-08)
 
 
