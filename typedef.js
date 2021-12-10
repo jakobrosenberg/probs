@@ -31,6 +31,7 @@ let assert;
  * @typedef {object} ProbsConfigOptions
  * @prop {function({file:string})} worker
  * @prop {function(string)} setupFile
+ * @prop {function(string)} teardownFile
  * @prop {function(ProbsConfigContextCtx):ProbsConfigContextCtx} context
  */
 
