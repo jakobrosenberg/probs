@@ -1,9 +1,18 @@
 /// <reference types="probs" />
 
 import { webkit } from "playwright";
+import { startServer } from "./utils.js";
+
+let server
 
 /** @type {ProbsConfig} */
 const options = {
+  setupDir: async () => {
+    server = await startServer()
+  },
+  teardownDir: async () => {
+    server.close()
+  },
   setupFile: async () => {
     global["browser"] = await webkit.launch();
     global["context"] = await global["browser"].newContext();
@@ -14,10 +23,7 @@ const options = {
     global["context"].close();
     global["page"].close();
   },
-  worker: ({ file }) => {
-    return {
-      execArgv: ["--experimental-loader", "svelte-esm-loader", "--no-warnings"],
-    };
-  },
+  worker: ({ file }) => ({ execArgv: ["--experimental-loader", "svelte-esm-loader", "--no-warnings"] }),
 };
+
 export default options;
