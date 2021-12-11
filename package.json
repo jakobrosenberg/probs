@@ -1,6 +1,6 @@
 {
   "name": "probs",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Tiny test library with async and nesting support",
   "main": "lib/runner.js",
   "bin": "lib/cli.js",

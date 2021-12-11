@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/jakobrosenberg/bestest/compare/v0.1.5...v0.1.6) (2021-12-11)
+
+
+### Features
+
+* added teardownFile ([570e6d0](https://github.com/jakobrosenberg/bestest/commit/570e6d0d6ae113fdd331b0457936eb9f2715baa5))
+* setupDir ([6cc8c41](https://github.com/jakobrosenberg/bestest/commit/6cc8c412a59ab8a72d606560493de674607f561c))
+
+
+### Bug Fixes
+
+* added *.spec.js to default glob ([fd3c57c](https://github.com/jakobrosenberg/bestest/commit/fd3c57ca60ded06f079f1418dab8531bf06b226c))
+
 ### [0.1.5](https://github.com/jakobrosenberg/bestest/compare/v0.1.4...v0.1.5) (2021-12-09)
 
 
