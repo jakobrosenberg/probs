@@ -1,8 +1,8 @@
-export function createDirname(meta: any): any;
+export function createDirname(meta: any): string;
 export function resolveConfig(options: any): Promise<any>;
 export function createHooksCollection(): {
     beforeAll: (cb: any) => any;
-    afterAll: any;
-    beforeEach: any;
-    afterEach: any;
+    afterAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
+    beforeEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
+    afterEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
 };
