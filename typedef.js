@@ -8,13 +8,13 @@
  * @global
  * @type {Test}
  */
-let test;
+let test
 
 /**
  * @global
  * @type {import('assert')}
  */
-let assert;
+let assert
 
 /**
  *  @typedef {"fail"|"pass"|"skipped"} Status
@@ -37,4 +37,18 @@ let assert;
 
 /**
  * @typedef {Partial<ProbsConfigOptions>} ProbsConfig
+ */
+
+/**
+ * @typedef {object} DirPromise
+ * @prop {Promise} promise
+ * @prop {FileItem[]} subscribers
+ * @prop {function} teardownDir
+ */
+
+/**
+ *  @typedef {object} FileItem
+ *  @prop {string} file
+ *  @prop {any} options
+ *  @prop {DirPromise[]} dirPromises
  */
