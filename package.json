@@ -2,7 +2,7 @@
   "name": "probs",
   "version": "0.1.7",
   "description": "Tiny test library with async and nesting support",
-  "main": "lib/runner.js",
+  "main": "lib/probs.js",
   "bin": "lib/cli.js",
   "type": "module",
   "types": "types/typedef.d.ts",
