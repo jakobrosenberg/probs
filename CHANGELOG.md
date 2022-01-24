@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/jakobrosenberg/bestest/compare/v0.1.6...v0.1.7) (2022-01-24)
+
+
+### Bug Fixes
+
+* better errors ([58a0f45](https://github.com/jakobrosenberg/bestest/commit/58a0f451a5649b5a4d0dde47a6de1adfedb9e9d3))
+* setupDir ran on each subfolder ([581abed](https://github.com/jakobrosenberg/bestest/commit/581abede2ba360413964973fdd4eb323e8ea85a3))
+
 ### [0.1.6](https://github.com/jakobrosenberg/bestest/compare/v0.1.5...v0.1.6) (2021-12-11)
 
 
