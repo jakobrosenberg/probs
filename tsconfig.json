@@ -3,6 +3,7 @@
   "include": ["lib/**/*.js", "typedef.js"],
   "exclude": ["**/node_modules"],
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "target": "ESNext",
     "module": "ESNext",
