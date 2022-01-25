@@ -1,1 +1,1 @@
-import('./async.test.js')
+import './async.test.js'
