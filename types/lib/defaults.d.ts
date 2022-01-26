@@ -3,5 +3,6 @@ export namespace defaults {
         rootTestState: import("./helpers/state.js").TestState;
         testState: import("./helpers/state.js").TestState;
     }>>;
+    const runner: string;
     const haltOnErrors: boolean;
 }

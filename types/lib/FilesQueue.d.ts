@@ -1,6 +1,4 @@
 export class FilesQueue {
-    constructor(options: any);
-    options: any;
     /** @type {FileItem[]} */
     pending: FileItem[];
     running: any[];
