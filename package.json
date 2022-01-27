@@ -5,7 +5,7 @@
   "main": "lib/probs.js",
   "bin": "lib/cli.js",
   "type": "module",
-  "types": "types/typedef.d.ts",
+  "types": "typings/types/typedef.d.ts",
   "directories": {
     "test": "test"
   },
@@ -21,6 +21,7 @@
     "colorette": "^2.0.16",
     "commander": "^8.3.0",
     "hookar": "^0.0.3",
+    "jest-diff": "^27.4.6",
     "picomatch": "^2.3.0"
   },
   "devDependencies": {
