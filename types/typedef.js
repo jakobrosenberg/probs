@@ -1,8 +1,15 @@
+
 /**
  * @callback Test
  * @param {string} description
  * @param {(test: Test)=>void} callback
  */
+
+/**
+ * @global
+ * @type {import('./assertFix')['assert']}
+ */
+ let assert
 
 /**
  * @global
@@ -12,9 +19,23 @@ let test
 
 /**
  * @global
- * @type {import('assert')}
+ * @type {Test}
  */
-let assert
+let describe
+
+/**
+ * @global
+ * @type {(Function)=>{}}
+ */
+let beforeAll
+
+/**
+ * @global
+ * @type {(Function)=>{}}
+ */
+let beforeEach
+
+
 
 /**
  *  @typedef {"fail"|"pass"|"skipped"} Status
@@ -29,9 +50,9 @@ let assert
 
 /**
  * @typedef {object} ProbsConfigOptions
- * @prop {function({file:string})} worker
- * @prop {function(string)} setupFile
- * @prop {function(string)} teardownFile
+ * @prop {({file:string})=>any} worker
+ * @prop {(string)=>any} setupFile
+ * @prop {(string)=>any} teardownFile
  * @prop {function(ProbsConfigContextCtx):ProbsConfigContextCtx} context
  */
 

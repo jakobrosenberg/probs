@@ -1,9 +1,10 @@
 {
   // Change this to match your project
-  "include": ["lib/**/*.js", "typedef.js"],
+  "include": ["lib/**/*.js", "types/**/*.js"],
   "exclude": ["**/node_modules"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "target": "ESNext",
     "module": "ESNext",
@@ -19,6 +20,6 @@
     // Types should go into this directory.
     // Removing this would place the .d.ts files
     // next to the .js files
-    "outDir": "types"
+    "outDir": "typings"
   }
 }

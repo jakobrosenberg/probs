@@ -91,10 +91,11 @@ export type ReporterCollection<T> = {
     closedFile: ReporterCallback<EnhancedReporterCtx<T>>;
     addedTest: ReporterCallback<EnhancedReporterCtx<T>>;
     startedTest: ReporterCallback<EnhancedReporterCtx<T>>;
+    finishedAllTests: ReporterCallback<EnhancedReporterCtx<T>>;
+    catch: ReporterCallback<EnhancedReporterCtx<T>>;
     finishedTest: ReporterCallback<{
         scope: Scope;
         status: Status;
         err: Error;
     } & T>;
-    finishedAllTests: ReporterCallback<EnhancedReporterCtx<T>>;
 };
