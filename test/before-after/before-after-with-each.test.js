@@ -19,7 +19,7 @@ afterAll(async () => {
        assert.equal(status, '1original>2beforeAll>rootBefore>rootBefore>rootBefore>3beforeAllNested>rootAfter>4nestedAfterAll>5second>rootAfter>6third>rootAfter')
 })
 
-test('before-all runs before all', (test, { beforeAll, afterAll }) => {
+test('before-all runs before all', ({ beforeAll, afterAll }) => {
     afterAll(async () => {
         status += '>4nestedAfterAll'
     })

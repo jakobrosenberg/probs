@@ -6,27 +6,23 @@ import { SourceMapConsumer, SourceMapGenerator } from 'source-map'
 
 const __dirname = createDirname(import.meta)
 
-test('can analyze file', async () => {
+test('can analyze string', async () => {
     const result = await analyzeFile(__dirname + '/test.sample.js')
-    assert.equal(result.tests.length, 3)
+    assert.equal(result.tests.length, 4)
     assert.deepEqual(result.tests[0].scope, ['foo'])
     assert.deepEqual(result.tests[1].scope, ['foo', 'bar'])
     assert.deepEqual(result.tests[2].scope, ['foo', 'bar', 'baz'])
+    assert.deepEqual(result.tests[3].scope, ['foo', 'sibling'])
 })
 
-test('can analyze string', async () => {
-    const content = readFileSync(__dirname + '/test.sample.js')
-    const result = await analyzeStr(content)
-    assert.equal(result.tests.length, 3)
-})
 
 test('can transform file', async () => {
     const original = readFileSync(__dirname + '/test.sample.js', 'utf-8')
 
     const { content, sourcemap } = await _transform(original, 'test.sample.js')
 
-    // 3 tests with 6 added lines in each
-    const addedLength = 3 * 6
+    // 4 tests with 6 added lines in each
+    const addedLength = 4 * 6
     assert.equal(
         content.split(/\r?\n/).length,
         original.split(/\r?\n/).length + addedLength,
