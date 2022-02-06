@@ -1,6 +1,6 @@
 {
   "name": "probs",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Tiny test library with async and nesting support",
   "main": "lib/probs.js",
   "bin": "lib/cli.js",

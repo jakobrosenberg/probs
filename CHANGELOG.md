@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/jakobrosenberg/bestest/compare/v0.1.7...v0.2.0) (2022-02-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* test arg in nested tests no longer needed
+
+### Features
+
+* added fork runner ([b596d06](https://github.com/jakobrosenberg/bestest/commit/b596d06e23d7d383b8b1355b8bddb3df4386cbc5))
+* added jest-diff ([0ba60c2](https://github.com/jakobrosenberg/bestest/commit/0ba60c2ceacae40deab823670a38b11e80647695))
+* nested tests are automatically detected ([3d76551](https://github.com/jakobrosenberg/bestest/commit/3d76551ba71bdfdd71478cf56b218043cf48dfea))
+* test arg in nested tests no longer needed ([faa5ba2](https://github.com/jakobrosenberg/bestest/commit/faa5ba2370855675e0da60aacc0cee673f899923))
+
+
+### Bug Fixes
+
+* double report for closed file ([381c026](https://github.com/jakobrosenberg/bestest/commit/381c02670c85451187ee4434d637bf6dcffbb325))
+* types ([dc31774](https://github.com/jakobrosenberg/bestest/commit/dc3177443a8a67ba60f040c33999e65948b7e0e6))
+* undefined should be unresolved ([db33367](https://github.com/jakobrosenberg/bestest/commit/db33367ddd913d49ee0840bf417c80dd21469dd2))
+* use specificity for options ([978a0f6](https://github.com/jakobrosenberg/bestest/commit/978a0f6b4dbcba4c64df24a3131ac0e93d669f74))
+* workers: 0 didn't report tests ([97e94a0](https://github.com/jakobrosenberg/bestest/commit/97e94a059b1eaa81ba8c0605f54b43e9bdacb16a))
+
 ### [0.1.7](https://github.com/jakobrosenberg/bestest/compare/v0.1.6...v0.1.7) (2022-01-24)
 
 
