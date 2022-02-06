@@ -1,7 +1,7 @@
 /// <reference types="probs" />
 
 import { webkit } from "playwright";
-import { startServer } from "./utils.js";
+import { startServer } from "./utils/misc.js";
 
 let server
 
