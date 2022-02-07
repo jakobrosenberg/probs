@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-3](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-2...v1.0.0-3) (2022-02-07)
+
+
+### Bug Fixes
+
+* didn't catch .mjs files by default ([cf7e3a7](https://github.com/jakobrosenberg/bestest/commit/cf7e3a7c501866760ca5f85050b90ad6dcd9dd18))
+
 ## [1.0.0-2](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-0...v1.0.0-2) (2022-02-07)
 
 
