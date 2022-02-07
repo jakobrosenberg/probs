@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-1](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-0...v1.0.0-1) (2022-02-07)
+
+
+### Bug Fixes
+
+* loader didn't work ([eb67c5f](https://github.com/jakobrosenberg/bestest/commit/eb67c5fc48f1bae44d54fe1731b27c8fee3fb61c))
+
 ## [1.0.0-0](https://github.com/jakobrosenberg/bestest/compare/v0.2.0...v1.0.0-0) (2022-02-06)
 
 ## [0.2.0](https://github.com/jakobrosenberg/bestest/compare/v0.1.7...v0.2.0) (2022-02-06)
