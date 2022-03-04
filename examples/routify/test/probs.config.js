@@ -1,7 +1,7 @@
 /// <reference types="probs" />
 
 import { webkit } from "playwright";
-import { startServer } from "./utils/misc.js";
+import { startServer } from "./utils.js";
 
 let server
 
@@ -11,7 +11,7 @@ const options = {
     server = await startServer()
   },
   teardownDir: async () => {
-    server.close()
+    await server.close()
   },
   setupFile: async () => {
     global["browser"] = await webkit.launch();

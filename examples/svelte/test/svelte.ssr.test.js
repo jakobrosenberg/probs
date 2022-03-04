@@ -5,7 +5,7 @@ const expectedHtml = count =>
     '\n<button id="-">-</button>' +
     `\n\n<h1>count: ${count}</h1>`
 
-test('can read svelte files in ssr mode', test => {
+test('can read svelte files in ssr mode', () => {
     test('files have render method', () => {
         assert(SsrComponent.render)
     })

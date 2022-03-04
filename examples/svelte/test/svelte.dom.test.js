@@ -8,7 +8,7 @@ const expectedHtml = count =>
     ' <button id="-">-</button>' +
     ` <h1>count: ${count}</h1>`
 
-test('can read svelte files in dom mode', test => {
+test('can read svelte files in dom mode', () => {
     const { window } = new JSDOM('', { url: 'http://test' });
     Object.assign(global, window)
     
