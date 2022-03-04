@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-4](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-3...v1.0.0-4) (2022-03-04)
+
+
+### Features
+
+* support loaders in --execArgv ([99ab914](https://github.com/jakobrosenberg/bestest/commit/99ab914e5fa8236d562bd7c2702d7268d2f5f21e))
+
+
+### Bug Fixes
+
+* bad version of esm-chain-loader ([89ac307](https://github.com/jakobrosenberg/bestest/commit/89ac3077ecbc2d434164e61ff5bac2aba5b142a4))
+* esmoduleinterop for expect ([53e67b3](https://github.com/jakobrosenberg/bestest/commit/53e67b322a907a060c04bf90dc45a2bc9463ac9b))
+
 ## [1.0.0-3](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-2...v1.0.0-3) (2022-02-07)
 
 

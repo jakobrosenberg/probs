@@ -1,6 +1,6 @@
 {
   "name": "probs",
-  "version": "1.0.0-3",
+  "version": "1.0.0-4",
   "description": "Tiny test library with async and nesting support",
   "main": "lib/probs.js",
   "bin": "lib/cli.js",
@@ -27,7 +27,7 @@
     "jest-snapshot": "^27.5.0",
     "magic-string": "^0.25.7",
     "picomatch": "^2.3.0",
-    "esm-chain-loader":"^0.0.3-2"
+    "esm-chain-loader": "^0.0.3-2"
   },
   "devDependencies": {
     "@types/node": "^17.0.10",
