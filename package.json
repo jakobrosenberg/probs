@@ -11,8 +11,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "probs test -i **/_tests",
-    "test:fork": "probs test -i **/_tests --runner fork",
+    "test": "node lib/cli test -i **/_tests",
+    "test:fork": "node lib/cli test -i **/_tests --runner fork",
     "test-watch": "nodemon --exec npm run test --ignore **/temp/**"
   },
   "author": "jakobrosenberg@gmail.com",
@@ -26,7 +26,8 @@
     "jest-diff": "^27.4.6",
     "jest-snapshot": "^27.5.0",
     "magic-string": "^0.25.7",
-    "picomatch": "^2.3.0"
+    "picomatch": "^2.3.0",
+    "esm-chain-loader":"^0.0.3-2"
   },
   "devDependencies": {
     "@types/node": "^17.0.10",
