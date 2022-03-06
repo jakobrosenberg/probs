@@ -1,4 +1,3 @@
-
 /**
  * @callback Test
  * @param {string} description
@@ -9,7 +8,7 @@
  * @global
  * @type {import('./assertFix')['assert']}
  */
- let assert
+let assert
 
 /**
  * @global
@@ -35,8 +34,6 @@ let beforeAll
  */
 let beforeEach
 
-
-
 /**
  *  @typedef {"fail"|"pass"|"skipped"} Status
  *  @typedef {"pending"|"started"|"finished"} State
@@ -50,10 +47,17 @@ let beforeEach
 
 /**
  * @typedef {object} ProbsConfigOptions
+ * @prop {'serial'|'parallel'} testConcurrencyMode
  * @prop {({file:string})=>any} worker
  * @prop {(string)=>any} setupFile
  * @prop {(string)=>any} teardownFile
  * @prop {function(ProbsConfigContextCtx):ProbsConfigContextCtx} context
+ * 
+ * @prop {string} glob
+ * @prop {boolean} haltOnErrors
+ * @prop {'worker'|'fork'} runner
+ * @prop {string[]|string} ignore
+ * @prop {number} concurrency
  */
 
 /**

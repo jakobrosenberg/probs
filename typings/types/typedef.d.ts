@@ -36,12 +36,18 @@ type ProbsConfigContextCtx = {
     scope: string[];
 };
 type ProbsConfigOptions = {
+    testConcurrencyMode: 'serial' | 'parallel';
     worker: ({ file: string }: {
         file: any;
     }) => any;
     setupFile: (string: any) => any;
     teardownFile: (string: any) => any;
     context: (arg0: ProbsConfigContextCtx) => ProbsConfigContextCtx;
+    glob: string;
+    haltOnErrors: boolean;
+    runner: 'worker' | 'fork';
+    ignore: string[] | string;
+    concurrency: number;
 };
 type ProbsConfig = Partial<ProbsConfigOptions>;
 type DirPromise = {
