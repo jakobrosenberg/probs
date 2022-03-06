@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0-6](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-4...v1.0.0-6) (2022-03-06)
+
+
+### Features
+
+* support for multiple esm loaders ([f5545fd](https://github.com/jakobrosenberg/bestest/commit/f5545fd9a2d487421415de6cc58756959afdd870))
+
+
+### Bug Fixes
+
+* make expect global (solves expect.extend) ([c9ffc2a](https://github.com/jakobrosenberg/bestest/commit/c9ffc2ad65a1b5bf6eacf5274970e60e160cb1fa))
+
 ## [1.0.0-4](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-3...v1.0.0-4) (2022-03-04)
 
 
