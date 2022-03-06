@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-6...v1.0.0) (2022-03-06)
+
+
+### Features
+
+* add concurrency modes for individual tests ([c23a421](https://github.com/jakobrosenberg/bestest/commit/c23a42167a1aec69bbf5fe9b18f12c5bc0ba405a))
+
+
+### Bug Fixes
+
+* types ([1aafbb3](https://github.com/jakobrosenberg/bestest/commit/1aafbb307abfe7d41e6181d704c01612806da66d))
+
 ## [1.0.0-6](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-4...v1.0.0-6) (2022-03-06)
 
 
