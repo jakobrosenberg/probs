@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-1](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-0...v1.1.0-1) (2022-03-07)
+
+
+### Bug Fixes
+
+* support expect.extend and use .snap extension ([acd1e4b](https://github.com/jakobrosenberg/bestest/commit/acd1e4b27d21a1b0d8e219af16b7d965d507a7aa))
+
 ## [1.1.0-0](https://github.com/jakobrosenberg/bestest/compare/v1.0.0-6...v1.1.0-0) (2022-03-06)
 
 
