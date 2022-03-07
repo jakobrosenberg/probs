@@ -39,7 +39,7 @@ type ProbsConfigOptions = {
     testConcurrencyMode: 'serial' | 'parallel';
     worker: ({ file: string }: {
         file: any;
-    }) => any;
+    }) => WorkerOptions | import("child_process").ForkOptions;
     setupFile: (string: any) => any;
     teardownFile: (string: any) => any;
     context: (arg0: ProbsConfigContextCtx) => ProbsConfigContextCtx;

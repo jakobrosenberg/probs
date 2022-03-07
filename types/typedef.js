@@ -48,7 +48,7 @@ let beforeEach
 /**
  * @typedef {object} ProbsConfigOptions
  * @prop {'serial'|'parallel'} testConcurrencyMode
- * @prop {({file:string})=>any} worker
+ * @prop {({file:string})=>WorkerOptions|import("child_process").ForkOptions} worker
  * @prop {(string)=>any} setupFile
  * @prop {(string)=>any} teardownFile
  * @prop {function(ProbsConfigContextCtx):ProbsConfigContextCtx} context
