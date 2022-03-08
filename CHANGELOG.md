@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-2](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-1...v1.1.0-2) (2022-03-08)
+
+
+### Features
+
+* added main runner ([42fdff2](https://github.com/jakobrosenberg/bestest/commit/42fdff2707f02b4139e8375157202d3bc1c3af68))
+
+
+### Bug Fixes
+
+* defaults missing for non-cli ([15c477f](https://github.com/jakobrosenberg/bestest/commit/15c477f9ecedbdf6d6e8e37efd55502322c7f070))
+* probs should return a promise ([1a60e73](https://github.com/jakobrosenberg/bestest/commit/1a60e734f7ed082f4c686fe5b8977bac10566c9c))
+* report errors for broken test files ([fea1655](https://github.com/jakobrosenberg/bestest/commit/fea16553988c61d0f1e5892145b4e188f69016b6))
+
 ## [1.1.0-1](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-0...v1.1.0-1) (2022-03-07)
 
 
