@@ -40,7 +40,7 @@ test('can transform file', async () => {
 
 test('can access variables added by transform', () => {
     // @ts-ignore
-    assert.equal(test, PROBS_CONTEXT.nestedTest)
+    assert.equal(test, PROBS_CONTEXT.test)
     test('scopes work in nested tests', () => {
         // @ts-ignore
         assert.deepEqual(PROBS_CONTEXT.scope, [
