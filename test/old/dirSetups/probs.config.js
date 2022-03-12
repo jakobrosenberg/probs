@@ -8,7 +8,7 @@ export default {
     setupDir: async id => {
         await delay(1000)
         mkdirSync(tmpDir, { recursive: true })
-        writeFileSync(file, 'bar')
+        writeFileSync(file, 'foo')
     },
     teardownDir: async id => {
         rmSync(tmpDir, { recursive: true })

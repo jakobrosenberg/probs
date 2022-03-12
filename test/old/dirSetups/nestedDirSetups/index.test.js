@@ -1,5 +1,5 @@
 import { rmSync, mkdirSync, writeFileSync, readdirSync, readFileSync } from 'fs'
-import { createDirname, delay } from "../../util.js";
+import { createDirname, delay } from "../../../util.js";
 const __dirname = createDirname(import.meta)
 const tmpDir = __dirname + '/temp'
 const parentTmpDir = __dirname + '/../temp'
