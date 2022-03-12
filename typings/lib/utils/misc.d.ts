@@ -15,3 +15,10 @@ export function createQueuedFunctionWrapper(mode?: 'serial' | 'parallel'): {
         params: any;
     }[];
 };
+export function capitalize(str: any): any;
+export function fileFromScope(scope: any): {
+    relativePath: any;
+    path: string;
+    relativeDir: string;
+    dir: string;
+};

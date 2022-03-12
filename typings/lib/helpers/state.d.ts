@@ -1,33 +1,66 @@
-export function createTestStateManager(): {
-    events: {
-        addedTest: ({ scope }: {
-            scope: any;
-        }) => TestState;
-        addedFile: ({ scope }: {
-            scope: any;
-        }) => TestState;
-        finishedTest: (params: any) => any;
-        startedTest: ({ scope }: {
-            scope: any;
-        }) => any;
-        openedFile: ({ scope }: {
-            scope: any;
-        }) => any;
-        closedFile: ({ scope }: {
-            scope: any;
-        }) => any;
-        finishedAllTests: () => void;
-    };
+/**
+ * @typedef {Object} ReporterCtx
+ * @prop {Scope=} scope
+ * @prop {Error=} err
+ * @prop {Status=} status
+ */
+/**
+ * @template T
+ * @typedef {ReporterCtx & T} EnhancedReporterCtx
+ */
+/**
+ * @typedef {ReporterCtx & {rootTestState: TestState, testState: TestState}} StateProxyCtx
+ */
+/**
+ * @callback Reporter
+ * @prop {Reporter} ctx
+ */
+/**
+ * @template C
+ * @callback ReporterCallback
+ * @param {C} ctx
+ * @param {...any} params
+ */
+/**
+ * @template T
+ * @typedef {Object} ReporterCollection
+ * @prop {ReporterCallback<EnhancedReporterCtx<T>>} addedFile
+ * @prop {ReporterCallback<EnhancedReporterCtx<T>>} openedFile
+ * @prop {ReporterCallback<EnhancedReporterCtx<T>>} closedFile
+ * @prop {ReporterCallback<EnhancedReporterCtx<T>>} addedTest
+ * @prop {ReporterCallback<EnhancedReporterCtx<T>>} startedTest
+ * @prop {ReporterCallback<EnhancedReporterCtx<T>>} finishedAllTests
+ * @prop {ReporterCallback<EnhancedReporterCtx<T>>} catch
+ * @prop {ReporterCallback<{scope: Scope, status: Status, err: Error} & T>} finishedTest
+ */
+export class StateManager {
+    /**
+     *
+     * @param {import('../probs.js').Probs} probs
+     */
+    constructor(probs: import('../probs.js').Probs);
+    log: any[];
+    probs: import("../probs.js").Probs;
     rootTestState: TestState;
-    getStateNodeByScope: (scope: any) => any;
-    stateProxy: (target: Partial<ReporterCollection<{
-        rootTestState: TestState;
-        testState: TestState;
-    }>>) => Partial<ReporterCollection<{
-        rootTestState: TestState;
-        testState: TestState;
-    }>>;
-};
+    /**
+     * @param {string[]} scope
+     * @returns {TestState}
+     */
+    getByScope(scope: string[]): TestState;
+    /**
+     * @param {{scope: string[]}} param0
+     * @returns {{state: TestState, scope: string[]}}
+     */
+    _addTestState({ scope }: {
+        scope: string[];
+    }): {
+        state: TestState;
+        scope: string[];
+    };
+}
+/**
+ * TestState represents Root, files and tests
+ */
 export class TestState {
     /**
      * @param {{scope: Scope, parent: TestState, name: string}=} ctx

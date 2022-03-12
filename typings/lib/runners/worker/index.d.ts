@@ -1,4 +1,4 @@
-export function worker(file: any, { reporter, ...options }: {
-    [x: string]: any;
-    reporter: any;
-}): Promise<any>;
+/**
+ @type {ProbsRunner}
+ */
+export const worker: ProbsRunner;
