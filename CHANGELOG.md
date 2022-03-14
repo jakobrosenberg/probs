@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-4](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-3...v1.1.0-4) (2022-03-14)
+
+
+### Bug Fixes
+
+* __snapshots__ should be lowercase ([03f1b78](https://github.com/jakobrosenberg/bestest/commit/03f1b78dabfb79c04083ce4915598025ad8cf5dc))
+
 ## [1.1.0-3](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-2...v1.1.0-3) (2022-03-09)
 
 
