@@ -46,6 +46,18 @@ test('can nest tests', async ({ file }) => {
     })
 })
 
+test('can use hooks', async ({ file }) => {
+    const promises = [
+        probs(file.relativeDir + '/_tests/hooks', { runner: 'worker' }),
+        probs(file.relativeDir + '/_tests/hooks', { runner: 'fork' }),
+        probs(file.relativeDir + '/_tests/hooks', { runner: 'main' }),
+    ]
+    const [worker, fork, main] = await Promise.all(promises)
+    assert.equal(worker.status, 'pass')
+    assert.equal(fork.status, 'pass')
+    assert.equal(main.status, 'pass')
+})
+
 test('can run tests concurrently / in sequence', async ({ file }) => {
     const concurrentTester = createConcurrentTester(file, 2)
     const sequenceTester = createConcurrentTester(file, 1)
@@ -91,7 +103,6 @@ const createConcurrentTester =
 
 const createNestedTestTester = file => async runner =>
     probs(file.relativeDir + '/_tests/nesting', { runner })
-
 
 const flatSummary = (state, depth = 0) => {
     let line = !state.name
