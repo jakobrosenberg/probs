@@ -123,7 +123,9 @@ type ProbsOptions = {
     ignore: string;
     concurrency: number;
     globals: boolean;
-    path?: string | undefined;
+    path?: (string | string[]) | undefined;
+    timeout?: number | undefined;
+    pattern: string[];
     worker?: ({ file: string }: {
         file: any;
     }) => import('worker_threads').WorkerOptions;
@@ -133,7 +135,7 @@ type ProbsRunner = (probs: Probs, file: string, options: ProbsOptions) => any;
 type Probs = import('../lib/probs.js').Probs;
 type CreateHooksCollection = typeof import("../lib/utils/misc.js")['createHooksCollection'];
 type Hooks = {
-    beforeAll: (cb: any) => any;
+    beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
     afterAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
     beforeEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
     afterEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;

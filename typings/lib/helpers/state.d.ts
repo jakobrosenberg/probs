@@ -72,8 +72,11 @@ export class TestState {
     });
     /** @type {Status} */
     ownStatus: Status;
-    /** @type {Error} */
-    ownErr: Error;
+    /** @type {Error & {text: string, raw: any}} */
+    ownErr: Error & {
+        text: string;
+        raw: any;
+    };
     /** @type {Date} */
     startedAt: Date;
     /** @type {Date} */

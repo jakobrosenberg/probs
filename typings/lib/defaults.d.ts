@@ -5,4 +5,6 @@ export namespace defaults {
     const ignore: string;
     const concurrency: number;
     const globals: boolean;
+    const timeout: number;
+    const pattern: any[];
 }

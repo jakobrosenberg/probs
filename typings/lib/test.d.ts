@@ -2,9 +2,9 @@ export function createTest({ parentScope, options, hooks, createQueuedFunction, 
 export type ProbsTestPayload = {
     parentScope: string[];
     emitter: ProbsEmitter;
-    options: any;
+    options: ProbsOptions;
     hooks: {
-        beforeAll: (cb: any) => any;
+        beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         afterAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         beforeEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         afterEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;

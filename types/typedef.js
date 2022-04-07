@@ -150,7 +150,9 @@ let PROBS_CONTEXT
  * @prop {string} ignore
  * @prop {number} concurrency
  * @prop {boolean} globals
- * @prop {string=} path
+ * @prop {string|string[]=} path
+ * @prop {number=} timeout
+ * @prop {string[]} pattern
  * @prop {({ file: string })=>import('worker_threads').WorkerOptions=} worker
  */
 

@@ -1,4 +1,4 @@
-export function probs(path: string, options?: Partial<ProbsOptions> | undefined): Promise<import("./helpers/state.js").TestState>;
+export function probs(path: string | string[], options?: Partial<ProbsOptions> | undefined): Promise<import("./helpers/state.js").TestState>;
 export class Probs {
     constructor(options: any);
     onAddedFile: import("hookar").CollectionSyncVoid<HookPayloadFields>;
