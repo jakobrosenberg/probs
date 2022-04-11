@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-9](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-8...v1.1.0-9) (2022-04-11)
+
+
+### Bug Fixes
+
+* timeout didn't log cause of error ([8e17eca](https://github.com/jakobrosenberg/bestest/commit/8e17ecab5e7a8b0d3208c89ec224c817916cf123))
+
 ## [1.1.0-8](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-7...v1.1.0-8) (2022-04-11)
 
 
