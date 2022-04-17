@@ -25,7 +25,8 @@ test('can nest tests', async ({ file }) => {
         'pass pass          nesting 4',
     ].join('\r\n')
 
-    const nestedTestTester = createNestedTestTester(file)
+    const nestedTestTester = async runner =>
+        probs(file.relativeDir + '/_tests/nesting', { runner })
 
     const promises = [
         nestedTestTester('worker'),
@@ -108,7 +109,7 @@ test('kills hanging tests', async ({ file }) => {
         assert.equal(children['I hang a little'].status, 'pass')
         assert.equal(children['I also hang a little'].status, 'pass')
         assert.equal(children['I hang too much'].status, 'fail')
-        assert.equal(children['I hang too much'].ownErr.text, 'timed out (150 ms)')
+        assert.equal(children['I hang too much'].ownErr.text, 'Error: timed out (150 ms)')
     }
 })
 
@@ -132,13 +133,13 @@ test('error messages', async ({ file }) => {
         assert.equal(file.children['I throw an error'].status, 'fail')
         assert.equal(file.children['I throw an error'].ownStatus, 'fail')
         assert.equal(file.children['I throw an error'].ownErr.text, 'Error: I failed')
-        
+
         assert.equal(file.children['My child throws an error'].status, 'fail')
         assert.equal(file.children['My child throws an error'].ownStatus, 'pass')
         assert.equal(file.children['My child throws an error'].children['I throw an error'].status, 'fail')
         assert.equal(file.children['My child throws an error'].children['I throw an error'].ownStatus, 'fail')
         assert.equal(file.children['My child throws an error'].children['I throw an error'].ownErr.text, 'Error: I failed')
-        
+
         const gcTest = file.children['My grandchild throws an error']
         assert.equal(gcTest.status, 'fail')
         assert.equal(gcTest.ownStatus, 'pass')
@@ -147,15 +148,14 @@ test('error messages', async ({ file }) => {
         assert.equal(gcTest.children['My child throws an error'].children['I throw an error'].status, 'fail')
         assert.equal(gcTest.children['My child throws an error'].children['I throw an error'].ownStatus, 'fail')
         assert.equal(gcTest.children['My child throws an error'].children['I throw an error'].ownErr.text, 'Error: I failed')
-        
-        
+
         assert.equal(file.children['My child and I throw errors'].status, 'fail')
         assert.equal(file.children['My child and I throw errors'].ownStatus, 'fail')
         assert.equal(file.children['My child and I throw errors'].ownErr.text, 'Error: Parent failed')
-        
+
         assert.equal(file.children['My child and I throw errors'].children['I throw an error'].status, 'fail')
         assert.equal(file.children['My child and I throw errors'].children['I throw an error'].ownStatus, 'fail')
-        assert.equal(file.children['My child and I throw errors'].children['I throw an error'].ownErr.text, 'Error: Child failed')        
+        assert.equal(file.children['My child and I throw errors'].children['I throw an error'].ownErr.text, 'Error: Child failed')
     }
 })
 

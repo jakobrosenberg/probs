@@ -1,6 +1,5 @@
 /**
  * @typedef {Object} TestCbPayloadFields
- * @prop {Test} test
  * @prop {{
  *  path: string,
  *  relativePath: string,
@@ -13,7 +12,7 @@
  */
 
 /**
- * @callback Test
+ * @callback TestCb
  * @param {string} description
  * @param {(TestCbPayload)=>void} callback
  */
@@ -32,13 +31,13 @@ let expect
 
 /**
  * @global
- * @type {Test}
+ * @type {TestCb}
  */
 let test
 
 /**
  * @global
- * @type {Test}
+ * @type {TestCb}
  */
 let describe
 
