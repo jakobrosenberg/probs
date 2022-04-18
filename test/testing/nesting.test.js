@@ -1,4 +1,4 @@
-import { probs } from '../../lib/probs.js'
+import { probs } from '../../lib/Framework/probs.js'
 import { flatSummary } from './_utils.js'
 
 // todo
