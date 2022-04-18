@@ -1,4 +1,4 @@
-import { Probs, probs } from '../../lib/Framework/probs.js'
+import { probs } from '../../lib/Framework/probs.js'
 
 // todo
 /**
