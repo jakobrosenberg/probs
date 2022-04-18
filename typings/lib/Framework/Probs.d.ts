@@ -1,6 +1,10 @@
-export function probs(path: string | string[], options?: Partial<ProbsOptions> | undefined): Promise<import("./helpers/state.js").TestState>;
+export function probs(path: string | string[], options?: Partial<ProbsOptions> | undefined): Promise<import("./StateManager.js").TestState>;
 export class Probs {
-    constructor(options: any);
+    /**
+     *
+     * @param {ProbsOptions} options
+     */
+    constructor(options: ProbsOptions);
     onAddedFile: import("hookar").CollectionSyncVoid<HookPayloadFields>;
     onAddedTest: import("hookar").CollectionSyncVoid<HookPayloadFields>;
     onFinishedTest: import("hookar").CollectionSyncVoid<HookPayloadFields>;
@@ -8,23 +12,20 @@ export class Probs {
     onOpenedFile: import("hookar").CollectionSyncVoid<HookPayloadFields>;
     onClosedFile: import("hookar").CollectionSyncVoid<HookPayloadFields>;
     onFinishedAllTests: import("hookar").CollectionSyncVoid<HookPayloadFields>;
-    paths: any[];
-    options: any;
+    paths: string[];
+    options: ProbsOptions;
+    runner: ProbsRunner;
     stateManager: StateManager;
-    filesQueue: FilesQueue;
-    scanner: Scanner;
+    queueManager: QueueManager;
     /**
      * @param {ProbEvents} eventName
      */
     callEvent(eventName: ProbEvents, params: any): any;
     /**
      *
-     * @returns {Promise<import('./helpers/state.js').TestState>}
+     * @returns {Promise<import('./StateManager').TestState>}
      */
-    run(): Promise<import('./helpers/state.js').TestState>;
-    onComplete: () => void;
-    checkStatus(): Promise<void>;
+    run(): Promise<import('./StateManager').TestState>;
 }
-import { StateManager } from "./helpers/state.js";
-import { FilesQueue } from "./FilesQueue.js";
-import { Scanner } from "./Scanner.js";
+import { StateManager } from "./StateManager.js";
+import { QueueManager } from "../utils/QueueManager.js";

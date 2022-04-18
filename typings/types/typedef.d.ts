@@ -1,6 +1,5 @@
 /**
  * @typedef {Object} TestCbPayloadFields
- * @prop {Test} test
  * @prop {{
  *  path: string,
  *  relativePath: string,
@@ -12,7 +11,7 @@
  * @typedef {TestCbPayloadFields & Hooks} TestCbPayload
  */
 /**
- * @callback Test
+ * @callback TestCb
  * @param {string} description
  * @param {(TestCbPayload)=>void} callback
  */
@@ -28,14 +27,14 @@ declare let assert: typeof import("./assertFix")['assert'];
 declare let expect: import('expect/build/types').Expect;
 /**
  * @global
- * @type {Test}
+ * @type {TestCb}
  */
-declare let test: Test;
+declare let test: TestCb;
 /**
  * @global
- * @type {Test}
+ * @type {TestCb}
  */
-declare let describe: Test;
+declare let describe: TestCb;
 /**
  * @global
  * @type {(Function)=>{}}
@@ -62,7 +61,6 @@ declare let afterEach: (Function: any) => {};
  */
 declare let PROBS_CONTEXT: any;
 type TestCbPayloadFields = {
-    test: Test;
     file: {
         path: string;
         relativePath: string;
@@ -72,7 +70,7 @@ type TestCbPayloadFields = {
     expect: import('expect/build/types').Expect;
 };
 type TestCbPayload = TestCbPayloadFields & Hooks;
-type Test = (description: string, callback: (TestCbPayload: any) => void) => any;
+type TestCb = (description: string, callback: (TestCbPayload: any) => void) => any;
 type Status = "fail" | "pass" | "skipped";
 type State = "pending" | "started" | "finished";
 type Scope = string[];
@@ -95,21 +93,20 @@ type ProbsConfigOptions = {
 };
 type ProbsConfig = Partial<ProbsConfigOptions>;
 type DirPromise = {
-    promise: Promise<any>;
-    subscribers: FileItem[];
+    setupPromise: Promise<any>;
+    children: FileItem[];
     teardownDir: Function;
 };
 type FileItem = {
     file: string;
     options: any;
-    dirPromises: DirPromise[];
 };
 type ProbEvents = 'addedFile' | 'addedTest' | 'finishedTest' | 'startedTest' | 'openedFile' | 'closedFile' | 'finishedAllTests';
 type ProbsEmitterCb = (eventName: ProbEvents, params: any) => any;
 type ProbsEmitter = ProbsEmitterCb;
 type HookPayloadFields = {
     scope: string[];
-    state?: import('../lib/helpers/state.js').TestState | undefined;
+    state?: any;
     fileItem?: FileItem | undefined;
 };
 type HookPayload = HookPayloadFields & {
@@ -130,9 +127,9 @@ type ProbsOptions = {
         file: any;
     }) => import('worker_threads').WorkerOptions;
 };
-type ProbsPlugin = (probs: Probs) => any;
-type ProbsRunner = (probs: Probs, file: string, options: ProbsOptions) => any;
-type Probs = import('../lib/probs.js').Probs;
+type ProbsPlugin = (probs: any) => any;
+type ProbsRunner = (probs: any, file: string, options: ProbsOptions) => any;
+type Probs = any;
 type CreateHooksCollection = typeof import("../lib/utils/misc.js")['createHooksCollection'];
 type Hooks = {
     beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;

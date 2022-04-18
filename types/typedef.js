@@ -103,8 +103,8 @@ let PROBS_CONTEXT
 
 /**
  * @typedef {object} DirPromise
- * @prop {Promise} promise
- * @prop {FileItem[]} subscribers
+ * @prop {Promise} setupPromise
+ * @prop {FileItem[]} children
  * @prop {function} teardownDir
  */
 
@@ -112,7 +112,6 @@ let PROBS_CONTEXT
  *  @typedef {object} FileItem
  *  @prop {string} file
  *  @prop {any} options
- *  @prop {DirPromise[]} dirPromises
  */
 
 /**

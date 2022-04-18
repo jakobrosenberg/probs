@@ -36,11 +36,11 @@
 export class StateManager {
     /**
      *
-     * @param {import('../probs.js').Probs} probs
+     * @param {import('./Probs.js').Probs} probs
      */
-    constructor(probs: import('../probs.js').Probs);
+    constructor(probs: import('./Probs.js').Probs);
     log: any[];
-    probs: import("../probs.js").Probs;
+    probs: import("./Probs.js").Probs;
     rootTestState: TestState;
     /**
      * @param {string[]} scope

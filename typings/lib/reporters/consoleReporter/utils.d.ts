@@ -38,7 +38,7 @@ export namespace testStatusMap {
 export const formatters: {
     [x: string]: Formatter;
 };
-export type Formatter = (testState: import('../../helpers/state.js').TestState, ...rest: any[]) => any;
+export type Formatter = (testState: any, ...rest: any[]) => any;
 import { green } from "colorette";
 import { red } from "colorette";
 import { whiteBright } from "colorette";
