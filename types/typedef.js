@@ -17,59 +17,6 @@
  * @param {(TestCbPayload)=>void} callback
  */
 
-/**
- * @global
- * @type {import('./assertFix')['assert']}
- */
-let assert
-
-/**
- * @global
- * @type {import('expect/build/types').Expect}
- */
-let expect
-
-/**
- * @global
- * @type {TestCb}
- */
-let test
-
-/**
- * @global
- * @type {TestCb}
- */
-let describe
-
-/**
- * @global
- * @type {(Function)=>{}}
- */
-let beforeAll
-
-/**
- * @global
- * @type {(Function)=>{}}
- */
-let beforeEach
-
-/**
- * @global
- * @type {(Function)=>{}}
- */
-let afterAll
-
-/**
- * @global
- * @type {(Function)=>{}}
- */
-let afterEach
-
-/**
- * @global
- * @type {any}
- */
-let PROBS_CONTEXT
 
 /**
  *  @typedef {"fail"|"pass"|"skipped"} Status
@@ -86,8 +33,8 @@ let PROBS_CONTEXT
  * @typedef {object} ProbsConfigOptions
  * @prop {'serial'|'parallel'} testConcurrencyMode
  * @prop {({file:string})=>WorkerOptions|import("child_process").ForkOptions} worker
- * @prop {(string)=>any} setupFile
- * @prop {(string)=>any} teardownFile
+ * @prop {(file: string)=>any} setupFile script that runs before each file. Runs in main thread
+ * @prop {(file: string)=>any} teardownFile script that runs after each file. Runs in main thread
  * @prop {function(ProbsConfigContextCtx):ProbsConfigContextCtx} context
  *
  * @prop {string} glob
@@ -167,7 +114,7 @@ let PROBS_CONTEXT
  */
 
 /**
- * @typedef {import('../lib/probs.js').Probs} Probs
+ * @typedef {import('../lib/Framework/probs.js').Probs} Probs
  */
 
 /**
