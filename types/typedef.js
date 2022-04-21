@@ -30,21 +30,6 @@
  */
 
 /**
- * @typedef {object} ProbsConfigOptions
- * @prop {'serial'|'parallel'} testConcurrencyMode
- * @prop {({file:string})=>WorkerOptions|import("child_process").ForkOptions} worker
- * @prop {(file: string)=>any} setupFile script that runs before each file. Runs in main thread
- * @prop {(file: string)=>any} teardownFile script that runs after each file. Runs in main thread
- * @prop {function(ProbsConfigContextCtx):ProbsConfigContextCtx} context
- *
- * @prop {string} glob
- * @prop {boolean} haltOnErrors
- * @prop {'worker'|'fork'} runner
- * @prop {string[]|string} ignore
- * @prop {number} concurrency
- */
-
-/**
  * @typedef {Partial<ProbsConfigOptions>} ProbsConfig
  */
 
@@ -78,7 +63,7 @@
 /**
  * @typedef {Object} HookPayloadFields
  * @prop {string[]} scope
- * @prop {import('../lib/helpers/state.js').TestState=} state
+ * @prop {import('../lib/Framework/StateManager').TestState=} state
  * @prop {FileItem=} fileItem
  */
 
@@ -110,7 +95,7 @@
  * @callback ProbsRunner
  * @param {Probs} probs
  * @param {string} file
- * @param {ProbsOptions} options
+ * @param {Partial<ProbsOptions & ProbsConfig>} options
  */
 
 /**

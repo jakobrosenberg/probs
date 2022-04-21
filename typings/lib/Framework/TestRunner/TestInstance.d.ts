@@ -29,7 +29,7 @@ export class TestInstance {
     callback: (ctx: TestCbPayload) => void;
     skip: boolean;
     callbackContext: {
-        expect: (_actual: any) => import("expect/build/types").Matchers<void, any>;
+        expect: import("expect/build/types").Expect<import("expect/build/types").MatcherState>;
         beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         afterAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         beforeEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
@@ -54,6 +54,8 @@ export class TestInstance {
         assert: typeof assert;
     };
     runTestCallback(): Promise<void>;
+    emitStarted(): void;
+    emitFinished(): void;
     runChildren(): Promise<void>;
     run(): Promise<void>;
     registerTestCb(msg: any, callback: any): Promise<void>;

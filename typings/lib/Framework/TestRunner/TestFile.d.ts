@@ -5,12 +5,12 @@ export class TestFile {
     /**
      * @param {string} file
      * @param {ProbsEmitter} emitter
-     * @param {ProbsOptions} options
+     * @param {Partial<ProbsOptions & ProbsConfig>} options
      */
-    constructor(file: string, emitter: ProbsEmitter, options: ProbsOptions);
+    constructor(file: string, emitter: ProbsEmitter, options: Partial<ProbsOptions & ProbsConfig>);
     file: string;
     emitter: ProbsEmitterCb;
-    options: ProbsOptions;
+    options: Partial<ProbsOptions & Partial<ProbsConfigOptions>>;
     run(): Promise<void>;
     importTestFile(): Promise<void>;
 }

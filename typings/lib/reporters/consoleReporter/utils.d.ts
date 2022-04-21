@@ -29,7 +29,7 @@ export namespace testStatusMap {
 }
 /**
  * @callback Formatter
- * @param {import('../../helpers/state.js').TestState} testState
+ * @param {import('../../Framework/StateManager').TestState} testState
  * @param {...any} rest
  */
 /**
@@ -38,7 +38,7 @@ export namespace testStatusMap {
 export const formatters: {
     [x: string]: Formatter;
 };
-export type Formatter = (testState: any, ...rest: any[]) => any;
+export type Formatter = (testState: import('../../Framework/StateManager').TestState, ...rest: any[]) => any;
 import { green } from "colorette";
 import { red } from "colorette";
 import { whiteBright } from "colorette";

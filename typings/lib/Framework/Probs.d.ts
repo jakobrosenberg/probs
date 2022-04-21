@@ -2,9 +2,9 @@ export function probs(path: string | string[], options?: Partial<ProbsOptions> |
 export class Probs {
     /**
      *
-     * @param {ProbsOptions} options
+     * @param {Partial<ProbsOptions>} options
      */
-    constructor(options: ProbsOptions);
+    constructor(options: Partial<ProbsOptions>);
     onAddedFile: import("hookar").CollectionSyncVoid<HookPayloadFields>;
     onAddedTest: import("hookar").CollectionSyncVoid<HookPayloadFields>;
     onFinishedTest: import("hookar").CollectionSyncVoid<HookPayloadFields>;
@@ -13,7 +13,7 @@ export class Probs {
     onClosedFile: import("hookar").CollectionSyncVoid<HookPayloadFields>;
     onFinishedAllTests: import("hookar").CollectionSyncVoid<HookPayloadFields>;
     paths: string[];
-    options: ProbsOptions;
+    options: Partial<ProbsOptions>;
     runner: ProbsRunner;
     stateManager: StateManager;
     queueManager: QueueManager;

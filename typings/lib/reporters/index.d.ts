@@ -1,2 +1,7 @@
-export { consoleReporter };
-import { consoleReporter } from "./consoleReporter/consoleReporter.js";
+export default reporters;
+/**
+ * @type {Object.<string, ProbsPlugin>}
+ */
+declare const reporters: {
+    [x: string]: ProbsPlugin;
+};

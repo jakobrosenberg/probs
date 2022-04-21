@@ -1,1 +1,1 @@
-export function consoleReporter(probs: any): void;
+export function consoleReporter(probs: import('../../Framework/probs.js').Probs): void;
