@@ -27,3 +27,15 @@ test('can use hooks', async ({ file }) => {
     assert.equal(fork.status, 'pass')
     assert.equal(main.status, 'pass')
 })
+
+test('can use file hooks', async ({ file }) => {
+    const promises = [
+        probs(file.relativeDir + '/_tests/fileHooks', { runner: 'worker' }),
+        probs(file.relativeDir + '/_tests/fileHooks', { runner: 'fork' }),
+        probs(file.relativeDir + '/_tests/fileHooks', { runner: 'main' }),
+    ]
+    const [worker, fork, main] = await Promise.all(promises)
+    assert.equal(worker.status, 'pass')
+    assert.equal(fork.status, 'pass')
+    assert.equal(main.status, 'pass')
+})
