@@ -86,6 +86,7 @@
  * @prop {string|string[]=} path
  * @prop {number=} timeout
  * @prop {string[]} pattern
+ * @prop {boolean} watch
  * @prop {({ file: string })=>import('worker_threads').WorkerOptions=} worker
  */
 

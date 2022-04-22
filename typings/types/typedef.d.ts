@@ -48,6 +48,7 @@ type ProbsOptions = {
     path?: (string | string[]) | undefined;
     timeout?: number | undefined;
     pattern: string[];
+    watch: boolean;
     worker?: ({ file: string }: {
         file: any;
     }) => import('worker_threads').WorkerOptions;
