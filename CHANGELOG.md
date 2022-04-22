@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-10](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-9...v1.1.0-10) (2022-04-22)
+
+
+### Bug Fixes
+
+* duplicate tests ([69347c9](https://github.com/jakobrosenberg/bestest/commit/69347c92bb8409403dbd46ce385131f940d7014f))
+* fix types ([aa4aad1](https://github.com/jakobrosenberg/bestest/commit/aa4aad18cd35d5fd7ff1a057c8db6758d44291de))
+* missing timestamps ([aa93498](https://github.com/jakobrosenberg/bestest/commit/aa9349885fd3610cd72fdc34594a2814cbb8bb2c))
+
 ## [1.1.0-9](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-8...v1.1.0-9) (2022-04-11)
 
 
