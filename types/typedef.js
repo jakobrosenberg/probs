@@ -7,8 +7,12 @@
  *  relativeDir: string
  * }} file
  * @prop {import('expect/build/types').Expect} expect
- * 
+ *
  * @typedef {TestCbPayloadFields & Hooks} TestCbPayload
+ */
+
+/**
+ * @typedef {import('../lib/Framework/StateManager').TestState} TestState
  */
 
 /**
@@ -16,7 +20,6 @@
  * @param {string} description
  * @param {(TestCbPayload)=>void} callback
  */
-
 
 /**
  *  @typedef {"fail"|"pass"|"skipped"} Status
@@ -105,5 +108,4 @@
 /**
  * @typedef {import('../lib/utils/misc.js')['createHooksCollection']} CreateHooksCollection
  * @typedef {CreateHooksCollection extends(...args: any[]) => infer U ? U : any} Hooks
-*/
-
+ */

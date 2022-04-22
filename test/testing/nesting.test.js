@@ -19,11 +19,11 @@ import { flatSummary } from './_utils.js'
 
 test('can nest tests', async ({ file }) => {
     const expected = [
-        'null pass  test/testing/_tests/nesting/nesting.test.js',
-        'pass pass    nesting 1',
-        'pass pass      nesting 2',
-        'pass pass        nesting 3',
-        'pass pass          nesting 4',
+        '        pass     test/testing/_tests/nesting/nesting.test.js',
+        'pass    pass       nesting 1',
+        'pass    pass         nesting 2',
+        'pass    pass           nesting 3',
+        'pass    pass             nesting 4',
     ].join('\r\n')
 
     const nestedTestTester = async runner =>
