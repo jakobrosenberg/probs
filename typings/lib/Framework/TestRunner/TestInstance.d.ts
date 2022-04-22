@@ -27,7 +27,6 @@ export class TestInstance {
     testFile: import("./TestFile").TestFile;
     parent: TestInstance;
     callback: (ctx: TestCbPayload) => void;
-    skip: boolean;
     callbackContext: {
         expect: import("expect/build/types").Expect<import("expect/build/types").MatcherState>;
         beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;

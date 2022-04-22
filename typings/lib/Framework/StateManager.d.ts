@@ -1,10 +1,4 @@
 /**
- * @typedef {Object} ReporterCtx
- * @prop {Scope=} scope
- * @prop {Error=} err
- * @prop {Status=} status
- */
-/**
  * @template T
  * @typedef {ReporterCtx & T} EnhancedReporterCtx
  */
@@ -40,6 +34,7 @@ export class StateManager {
      */
     constructor(probs: import('./Probs.js').Probs);
     log: any[];
+    activeTasks: BusyMap;
     probs: import("./Probs.js").Probs;
     rootTestState: TestState;
     /**
@@ -89,6 +84,7 @@ export class TestState {
     ownState: State;
     name: string;
     scope: Scope;
+    get descendants(): any;
     get parent(): TestState;
     get level(): number;
     get isFile(): boolean;
@@ -135,3 +131,4 @@ export type ReporterCollection<T> = {
         err: Error;
     } & T>;
 };
+import { BusyMap } from "./TestRunner/utils/index.js";

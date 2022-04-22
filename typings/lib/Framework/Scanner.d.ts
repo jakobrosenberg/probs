@@ -11,16 +11,10 @@ export class Dir {
     /** @type {Dir[]} */
     dirs: Dir[];
     options: {};
-    isFinished: boolean;
     probs: import("./Probs").Probs;
     path: string;
     parent: Dir;
-    finished: Promise<any> & {
-        resolve: Function;
-        reject: Function;
-    };
     refresh(): Promise<void>;
-    checkIfFinished(): void;
     refreshOptions(): Promise<void>;
     isMatch: any;
     isIgnore: any;
@@ -32,7 +26,6 @@ declare class File {
      * @param {Dir} dir
      */
     constructor(path: string, dir: Dir);
-    isFinished: boolean;
     path: string;
     dir: Dir;
     runTests(): Promise<void>;

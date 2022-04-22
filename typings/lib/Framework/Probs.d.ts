@@ -1,17 +1,16 @@
 export function probs(path: string | string[], options?: Partial<ProbsOptions> | undefined): Promise<import("./StateManager.js").TestState>;
 export class Probs {
     /**
-     *
      * @param {Partial<ProbsOptions>} options
      */
     constructor(options: Partial<ProbsOptions>);
-    onAddedFile: import("hookar").CollectionSyncVoid<HookPayloadFields>;
-    onAddedTest: import("hookar").CollectionSyncVoid<HookPayloadFields>;
-    onFinishedTest: import("hookar").CollectionSyncVoid<HookPayloadFields>;
-    onStartedTest: import("hookar").CollectionSyncVoid<HookPayloadFields>;
-    onOpenedFile: import("hookar").CollectionSyncVoid<HookPayloadFields>;
-    onClosedFile: import("hookar").CollectionSyncVoid<HookPayloadFields>;
-    onFinishedAllTests: import("hookar").CollectionSyncVoid<HookPayloadFields>;
+    onAddedFile: import("hookar").HooksCollection<any>;
+    onAddedTest: import("hookar").HooksCollection<any>;
+    onFinishedTest: import("hookar").HooksCollection<any>;
+    onStartedTest: import("hookar").HooksCollection<any>;
+    onOpenedFile: import("hookar").HooksCollection<any>;
+    onClosedFile: import("hookar").HooksCollection<any>;
+    onFinishedAllTests: import("hookar").HooksCollection<any>;
     paths: string[];
     options: Partial<ProbsOptions>;
     runner: ProbsRunner;

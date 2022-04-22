@@ -8,6 +8,7 @@ type TestCbPayloadFields = {
     expect: import('expect/build/types').Expect;
 };
 type TestCbPayload = TestCbPayloadFields & Hooks;
+type TestState = import('../lib/Framework/StateManager').TestState;
 type TestCb = (description: string, callback: (TestCbPayload: any) => void) => any;
 type Status = "fail" | "pass" | "skipped";
 type State = "pending" | "started" | "finished";

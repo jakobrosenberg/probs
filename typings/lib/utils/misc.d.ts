@@ -22,3 +22,4 @@ export function fileFromScope(scope: any): {
     relativeDir: string;
     dir: string;
 };
+export function importCfg(path: string, require?: boolean | undefined): Promise<any>;
