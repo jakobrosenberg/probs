@@ -2,9 +2,9 @@ import { probs } from '../../lib/Framework/probs.js'
 
 test('can use expect', async ({ file }) => {
     const promises = [
-        probs(file.relativeDir + '/_tests/expect'),
-        probs(file.relativeDir + '/_tests/expect'),
-        probs(file.relativeDir + '/_tests/expect'),
+        probs(file.relativeDir + '/_tests/expect', { runner: 'fork' }),
+        probs(file.relativeDir + '/_tests/expect', { runner: 'worker' }),
+        probs(file.relativeDir + '/_tests/expect', { runner: 'main' }),
     ]
 
     const [worker, fork, main] = await Promise.all(promises)
