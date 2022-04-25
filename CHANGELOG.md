@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-12](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-11...v1.1.0-12) (2022-04-25)
+
+
+### Features
+
+* add watcher ([95dbc0f](https://github.com/jakobrosenberg/bestest/commit/95dbc0f9104c290cdc8ded8e4ccb3c3818707674))
+* better test summary ([dccdadf](https://github.com/jakobrosenberg/bestest/commit/dccdadf047a298467f700c6a70da487adfbaa3d7))
+* watch-menu ([793b3d7](https://github.com/jakobrosenberg/bestest/commit/793b3d753bad6d833e80fe2346c8c6d621e03cef))
+
+
+### Bug Fixes
+
+* allow spaces in pattern delimiter ([1fd0340](https://github.com/jakobrosenberg/bestest/commit/1fd03407e471b5f0657a2e9a35a9d1c675a459c8))
+* relative paths couldn't be prefixed with ./ ([d47e101](https://github.com/jakobrosenberg/bestest/commit/d47e10104a39d387966a5b9641be4160cdb28274))
+
 ## [1.1.0-11](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-10...v1.1.0-11) (2022-04-22)
 
 
