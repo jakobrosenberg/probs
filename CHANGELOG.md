@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-15](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-14...v1.1.0-15) (2022-04-26)
+
+
+### Bug Fixes
+
+* improve performance on skipped tests ([6cbd8c2](https://github.com/jakobrosenberg/bestest/commit/6cbd8c246a90981bee87a2393f150de8dfb94be5))
+
 ## [1.1.0-14](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-12...v1.1.0-14) (2022-04-26)
 
 
