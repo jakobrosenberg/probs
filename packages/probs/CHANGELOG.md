@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-16](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-15...v1.1.0-16) (2022-05-31)
+
+
+### Bug Fixes
+
+* restore process.exit(1) for CLI ([a7e397f](https://github.com/jakobrosenberg/bestest/commit/a7e397ffa5b5eca9bd1ae6aca04a8c4e82eebe71))
+
 ## [1.1.0-15](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-14...v1.1.0-15) (2022-04-26)
 
 
