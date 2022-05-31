@@ -36,5 +36,6 @@ test('kills hanging tests', async ({ file }) => {
         assert.equal(children['I also hang a little'].status, 'pass')
         assert.equal(children['I hang too much'].status, 'fail')
         assert.equal(children['I hang too much'].ownErr.text, 'Error: timed out (150 ms)')
+        assert.equal(children['nested tests dont count toward parent timeout'].status, 'pass')
     }
 })

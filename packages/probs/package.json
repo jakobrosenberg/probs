@@ -12,8 +12,7 @@
   "scripts": {
     "build": "tsc",
     "test": "node lib/cli test/testing,lib -i **/_tests",
-    "test:fork": "node lib/cli test -i **/_tests --runner fork",
-    "test-watch": "nodemon --exec npm run test --ignore **/temp/**"
+    "test:fork": "node lib/cli test -i **/_tests --runner fork"
   },
   "author": "jakobrosenberg@gmail.com",
   "license": "MIT",
