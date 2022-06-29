@@ -23,7 +23,7 @@ export const createExpect = scope => {
         called.toMatchSnapshot = (
             hint,
             testFile = snapshotFile,
-            testTitle = scope.slice(-1),
+            testTitle = scope.join('/'),
         ) => {
             const snapshotState = new SnapshotState(testFile, {
                 updateSnapshot: process.env.SNAPSHOT_UPDATE ? 'all' : 'new',
