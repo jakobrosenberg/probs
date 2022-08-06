@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-19](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-18...v1.1.0-19) (2022-08-06)
+
+
+### Features
+
+* added update snapshots shortcut to watcher ([8ca121f](https://github.com/jakobrosenberg/bestest/commit/8ca121fb5e97554185b8777392e7ebddb3bbbb6e))
+
 ## [1.1.0-18](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-17...v1.1.0-18) (2022-08-06)
 
 
