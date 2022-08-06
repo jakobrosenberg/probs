@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-18](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-17...v1.1.0-18) (2022-08-06)
+
+
+### Features
+
+* update snapshot from cli ([dbdfcab](https://github.com/jakobrosenberg/bestest/commit/dbdfcabe536f7d15eebf69129fc7c234d8505ed9))
+
 ## [1.1.0-17](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-16...v1.1.0-17) (2022-06-29)
 
 
