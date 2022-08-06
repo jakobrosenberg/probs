@@ -5,7 +5,7 @@ import { basename, dirname } from 'path'
 
 // esmoduleinterop fix
 const expect =
-    global.expect || /** @type {import('expect')} */ (_expect.default || _expect)
+    global['expect'] || /** @type {import('expect')} */ (_expect.default || _expect)
 
 const { SnapshotState, toMatchSnapshot } = snapshot
 
