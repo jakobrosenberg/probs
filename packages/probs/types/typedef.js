@@ -82,6 +82,7 @@
  * @prop {string} glob
  * @prop {string} ignore
  * @prop {number} concurrency
+ * @prop {'all'|'new'|'none'} updateSnapshots
  * @prop {boolean} globals
  * @prop {string|string[]=} path
  * @prop {number=} timeout

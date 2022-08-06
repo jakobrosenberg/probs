@@ -11,9 +11,10 @@ const { SnapshotState, toMatchSnapshot } = snapshot
 
 /**
  * @param {string[]} scope
+ * @param {'all'|'new'|'none'} updateSnapshot
  */
-export const createExpect = scope => {
-    function _expect (_actual) {
+export const createExpect = (scope, updateSnapshot) => {
+    function _expect(_actual) {
         const snapshotFile = `${dirname(scope[0])}/__snapshots__/${basename(
             scope[0],
         )}.snap`
@@ -26,7 +27,7 @@ export const createExpect = scope => {
             testTitle = scope.join('/'),
         ) => {
             const snapshotState = new SnapshotState(testFile, {
-                updateSnapshot: process.env.SNAPSHOT_UPDATE ? 'all' : 'new',
+                updateSnapshot,
                 prettierPath: null,
                 snapshotFormat: null,
             })

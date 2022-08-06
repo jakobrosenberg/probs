@@ -6,5 +6,6 @@ export const defaults = {
     concurrency: 5,
     globals: true,
     timeout: 10000,
-    pattern: []
+    pattern: [],
+    updateSnapshots: 'new'
 }

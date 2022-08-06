@@ -24,6 +24,7 @@ program
     .option('-c --config <path>', 'path to config', 'probs.config.js')
     .option('-g --no-globals', 'disable globals')
     .option('-w --watch [path]', 'rerun tests on file changes')
+    .option('-u --update-snapshots <all|new|none>', 'updates failing snapshots', defaults.updateSnapshots)
     .option('   --runner <name>', 'runner to use for files', defaults.runner)
     .addOption(
         new Option('--timeout <number>', 'timeout for individual tests')

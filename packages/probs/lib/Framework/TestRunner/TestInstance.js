@@ -11,7 +11,6 @@ import { addTimeoutToPromise, fileFromScope } from '../../utils/misc.js'
 import { createExpect } from './utils/expect.js'
 import { cloneKeys, portableError, scopeMatchesPattern } from './utils/index.js'
 
-
 /**
  * The instance of a single test
  */
@@ -55,7 +54,7 @@ export class TestInstance {
             scope: this.scope,
             ...this.hooks,
             // expect wrapper that includes a localized "toMatchSnapshot"
-            expect: createExpect(this.scope),
+            expect: createExpect(this.scope, testFile.options.updateSnapshots),
         }
 
         const registerTest = this.registerTestCb.bind(this)
@@ -64,7 +63,7 @@ export class TestInstance {
             test: registerTest,
             it: registerTest,
             describe: registerTest,
-            expect: createExpect(this.scope),
+            expect: createExpect(this.scope, testFile.options.updateSnapshots),
             assert,
             ...this.hooks,
         }
