@@ -103,10 +103,12 @@ export class Menu {
             // const sortByKey = key => (item1, item2) => item1[key] > item2[key] ? 1 : -1
 
             this.isOpen = true
-            const tests = this.watcher.probs.stateManager.rootTestState.descendants.map(d => ({
-                title: d.scope.join(' // '),
-                value: d.scope.join(' // '),
-            }))
+            const tests = this.watcher.probs.stateManager.rootTestState.descendants.map(
+                d => ({
+                    title: d.scope.join(' // '),
+                    value: d.scope.join(' // '),
+                }),
+            )
             // .sort(sortByKey('title'))
 
             const { options } = await prompts({
@@ -121,10 +123,24 @@ export class Menu {
             ].filter((value, index, arr) => arr.indexOf(value) === index)
             this.prompts.menu()
         },
+        updateSnapshots: () => {
+            process.stdout.moveCursor(0, -1)
+            process.stdout.cursorTo(0)
+            process.stdout.clearLine(1)
+            const current = this.watcher.probs.options.updateSnapshots
+            this.watcher.probs.options.updateSnapshots =
+                current === 'new' ? 'all' : current === 'all' ? 'none' : 'new'
+            this.home()
+        },
     }
 
     async home() {
-        console.log('[q] quit / [r] restart / [m] menu / [f] filter')
+        process.stdout.write('\u001B[?25l') // hide cursor
+        console.log(
+            '[q] quit / [r] restart / [m] menu / [f] filter / [u] update snapshots' +
+                ` (${this.watcher.probs.options.updateSnapshots})`,
+        )
+
         if (!this.waitingForKeyPress)
             while (true) {
                 this.waitingForKeyPress = true
@@ -135,6 +151,7 @@ export class Menu {
                     r: () => this.watcher.run(),
                     m: () => this.prompts.menu(),
                     f: () => this.prompts.testFilterMenu(),
+                    u: () => this.prompts.updateSnapshots(),
                 }
                 if (map[key]) {
                     this.waitingForKeyPress = false
