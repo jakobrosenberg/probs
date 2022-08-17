@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-20](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-19...v1.1.0-20) (2022-08-17)
+
+
+### Bug Fixes
+
+* relative paths didn't work with globs ([9e8b9d4](https://github.com/jakobrosenberg/bestest/commit/9e8b9d491d7b3a2d728c57e89378fcf163328216))
+
 ## [1.1.0-19](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-18...v1.1.0-19) (2022-08-06)
 
 
