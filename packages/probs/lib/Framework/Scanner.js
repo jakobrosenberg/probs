@@ -41,8 +41,9 @@ export class Dir {
         const file = this._files.find(name => name.match(/probs\.config\..?(j|t)s/))
         const options = file && importCfg(resolve(this.path, file))
         this.options = { ...parentOptions, ...options }
-        this.isMatch = picomatch(this.options.glob)
-        this.isIgnore = picomatch(this.options.ignore)
+        const picoOptions = { format: str => str.replace(/^\.\//, '') }
+        this.isMatch = picomatch(this.options.glob, picoOptions)
+        this.isIgnore = picomatch(this.options.ignore, picoOptions)
     }
 
     async populateChildren() {
