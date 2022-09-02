@@ -20,14 +20,19 @@ export class TestFile {
 
     async run() {
         this.emitter('openedFile', { scope: [this.file] })
-        const localCfg = await importCfg(dirname(this.file)+'/probs.config.js')
-        const options = {...this.options, ...localCfg}
-        const testContext = new TestInstance(this.file, () => this.importTestFile(), this)        
-        
+        const localCfg = await importCfg(dirname(this.file) + '/probs.config.js')
+        const options = { ...this.options, ...localCfg }
+        const testContext = new TestInstance(
+            this.file,
+            () => this.importTestFile(),
+            this,
+            this.options,
+        )
+
         if (options.setupFile) await options.setupFile(this.file, { options })
         await testContext.run()
         if (options.teardownFile) await options.teardownFile(this.file, { options })
-        
+
         this.emitter('closedFile', { scope: [this.file] })
     }
 

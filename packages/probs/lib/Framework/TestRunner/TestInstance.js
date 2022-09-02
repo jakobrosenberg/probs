@@ -39,13 +39,15 @@ export class TestInstance {
      * @param {string} name
      * @param {(ctx: TestCbPayload)=>void} callback
      * @param {import('./TestFile').TestFile} testFile
+     * @param {Partial<ProbsOptions & ProbsConfig>} options
      * @param {TestInstance=} parent
      */
-    constructor(name, callback, testFile, parent) {
+    constructor(name, callback, testFile, options, parent) {
         this.name = name
         this.testFile = testFile
         this.parent = parent
         this.callback = callback
+        this.options = { ...options }
         if (!scopeMatchesPattern(this.scope, this.testFile.options.pattern))
             this.ownStatus = 'skipped'
 
@@ -55,6 +57,7 @@ export class TestInstance {
             ...this.hooks,
             // expect wrapper that includes a localized "toMatchSnapshot"
             expect: createExpect(this.scope, testFile.options.updateSnapshots),
+            options: this.options
         }
 
         const registerTest = this.registerTestCb.bind(this)
@@ -72,7 +75,7 @@ export class TestInstance {
     async runTestCallback() {
         try {
             const cbPromise = this.callback(this.callbackContext)
-            await addTimeoutToPromise(cbPromise, this.testFile.options.timeout)
+            await addTimeoutToPromise(cbPromise, this.options.timeout)
             this.ownStatus = 'pass'
         } catch (e) {
             this.ownStatus = 'fail'
@@ -124,7 +127,9 @@ export class TestInstance {
 
     async registerTestCb(msg, callback) {
         this.testFile.emitter('addedTest', { scope: [...this.scope, msg] })
-        this.children.push(new TestInstance(msg, callback, this.testFile, this))
+        this.children.push(
+            new TestInstance(msg, callback, this.testFile, this.options, this),
+        )
     }
 
     applyGlobals() {

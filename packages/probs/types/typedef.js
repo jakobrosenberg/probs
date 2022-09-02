@@ -8,7 +8,7 @@
  * }} file
  * @prop {import('expect/build/types').Expect} expect
  *
- * @typedef {TestCbPayloadFields & Hooks} TestCbPayload
+ * @typedef {TestCbPayloadFields & Hooks & {options: Partial<ProbsOptions & ProbsConfig>}} TestCbPayload
  */
 
 /**
@@ -18,7 +18,7 @@
 /**
  * @callback TestCb
  * @param {string} description
- * @param {(TestCbPayload)=>void} callback
+ * @param {(ctx: TestCbPayload)=>void} callback
  */
 
 /**
