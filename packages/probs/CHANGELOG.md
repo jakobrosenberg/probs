@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-20...v1.1.0) (2022-09-02)
+
+
+### Features
+
+* added recursive options to test callback ([7f06a47](https://github.com/jakobrosenberg/bestest/commit/7f06a47c3d578a889fc7f8a86fe65aee4fff7712))
+* added TestCbPayload to onError ([9f8c073](https://github.com/jakobrosenberg/bestest/commit/9f8c073d932a4c3646a5de7604dbac16dfcf9aa3))
+
 ## [1.1.0-20](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-19...v1.1.0-20) (2022-08-17)
 
 
