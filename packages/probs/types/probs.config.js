@@ -7,6 +7,7 @@
  * @prop {ProbsConfigFileHook} setupFile script that runs before each file. Runs in main thread
  * @prop {ProbsConfigFileHook} teardownFile script that runs after each file. Runs in main thread
  * @prop {function(ProbsConfigContextCtx):ProbsConfigContextCtx} context
+ * @prop {(ctx: TestCbPayload)=>void} onError
  *
  * @prop {string} glob
  * @prop {boolean} haltOnErrors

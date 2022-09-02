@@ -1,15 +1,18 @@
 type TestCbPayloadFields = {
+    scope: string[];
+    expect: import('expect/build/types').Expect;
     file: {
         path: string;
         relativePath: string;
         dir: string;
         relativeDir: string;
     };
-    expect: import('expect/build/types').Expect;
 };
-type TestCbPayload = TestCbPayloadFields & Hooks;
+type TestCbPayload = TestCbPayloadFields & Hooks & {
+    options: Partial<ProbsOptions & ProbsConfig>;
+};
 type TestState = import('../lib/Framework/StateManager').TestState;
-type TestCb = (description: string, callback: (TestCbPayload: any) => void) => any;
+type TestCb = (description: string, callback: (ctx: TestCbPayload) => void) => any;
 type Status = "fail" | "pass" | "skipped";
 type State = "pending" | "started" | "finished";
 type Scope = string[];
@@ -44,6 +47,7 @@ type ProbsOptions = {
     glob: string;
     ignore: string;
     concurrency: number;
+    updateSnapshots: 'all' | 'new' | 'none';
     globals: boolean;
     path?: (string | string[]) | undefined;
     timeout?: number | undefined;

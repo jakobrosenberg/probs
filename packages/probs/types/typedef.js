@@ -1,12 +1,13 @@
 /**
  * @typedef {Object} TestCbPayloadFields
+ * @prop {string[]} scope
+ * @prop {import('expect/build/types').Expect} expect
  * @prop {{
  *  path: string,
  *  relativePath: string,
  *  dir: string,
  *  relativeDir: string
  * }} file
- * @prop {import('expect/build/types').Expect} expect
  *
  * @typedef {TestCbPayloadFields & Hooks & {options: Partial<ProbsOptions & ProbsConfig>}} TestCbPayload
  */

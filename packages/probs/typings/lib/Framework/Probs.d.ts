@@ -1,4 +1,4 @@
-export function probs(path: string | string[], options?: Partial<ProbsOptions> | undefined): Promise<import("./StateManager.js").TestState>;
+export function probs(path: string | string[], options?: Partial<ProbsOptions> | undefined): Promise<void | import("./StateManager.js").TestState>;
 export class Probs {
     /**
      * @param {Partial<ProbsOptions>} options

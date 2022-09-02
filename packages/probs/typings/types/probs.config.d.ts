@@ -15,6 +15,7 @@ type ProbsConfigOptions = {
      */
     teardownFile: ProbsConfigFileHook;
     context: (arg0: ProbsConfigContextCtx) => ProbsConfigContextCtx;
+    onError: (ctx: TestCbPayload) => void;
     glob: string;
     haltOnErrors: boolean;
     runner: 'worker' | 'fork';

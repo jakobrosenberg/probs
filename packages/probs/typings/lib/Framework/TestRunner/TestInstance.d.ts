@@ -7,9 +7,10 @@ export class TestInstance {
      * @param {string} name
      * @param {(ctx: TestCbPayload)=>void} callback
      * @param {import('./TestFile').TestFile} testFile
+     * @param {Partial<ProbsOptions & ProbsConfig>} options
      * @param {TestInstance=} parent
      */
-    constructor(name: string, callback: (ctx: TestCbPayload) => void, testFile: import('./TestFile').TestFile, parent?: TestInstance | undefined);
+    constructor(name: string, callback: (ctx: TestCbPayload) => void, testFile: import('./TestFile').TestFile, options: Partial<ProbsOptions & ProbsConfig>, parent?: TestInstance | undefined);
     /** @type { TestInstance[] } */
     children: TestInstance[];
     status: any;
@@ -27,20 +28,38 @@ export class TestInstance {
     testFile: import("./TestFile").TestFile;
     parent: TestInstance;
     callback: (ctx: TestCbPayload) => void;
-    callbackContext: {
-        expect: import("expect/build/types").Expect<import("expect/build/types").MatcherState>;
-        beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
-        afterAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
-        beforeEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
-        afterEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
-        file: {
-            relativePath: any;
-            path: string;
-            relativeDir: string;
-            dir: string;
-        };
-        scope: any;
+    options: {
+        reporter?: string | ProbsPlugin;
+        runner?: "worker" | "fork";
+        haltOnErrors?: boolean;
+        glob?: string;
+        ignore?: string & (string | string[]);
+        concurrency?: number;
+        updateSnapshots?: "all" | "none" | "new";
+        globals?: boolean;
+        path?: string | string[];
+        timeout?: number;
+        pattern?: string[];
+        watch?: boolean;
+        worker?: (({ file: string }: {
+            file: any;
+        }) => import("worker_threads").WorkerOptions) & (({ file: string }: {
+            file: any;
+        }) => WorkerOptions | import("child_process").ForkOptions);
+        testConcurrencyMode?: "serial" | "parallel";
+        /**
+         * script that runs before each file. Runs in main thread
+         */
+        setupFile?: ProbsConfigFileHook;
+        /**
+         * script that runs after each file. Runs in main thread
+         */
+        teardownFile?: ProbsConfigFileHook;
+        context?: (arg0: ProbsConfigContextCtx) => ProbsConfigContextCtx;
+        onError?: (ctx: TestCbPayload) => void;
     };
+    /** @type {TestCbPayload} */
+    callbackContext: TestCbPayload;
     globals: {
         beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         afterAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;

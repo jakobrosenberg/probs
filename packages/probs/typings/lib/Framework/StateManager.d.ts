@@ -84,7 +84,10 @@ export class TestState {
     ownState: State;
     name: string;
     scope: Scope;
-    get descendants(): any;
+    /**
+     * @type {TestState[]}
+     */
+    get descendants(): TestState[];
     get parent(): TestState;
     get level(): number;
     get isFile(): boolean;

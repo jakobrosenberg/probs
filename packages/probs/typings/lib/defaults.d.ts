@@ -7,4 +7,5 @@ export namespace defaults {
     const globals: boolean;
     const timeout: number;
     const pattern: any[];
+    const updateSnapshots: string;
 }

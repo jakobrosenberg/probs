@@ -51,13 +51,14 @@ export class TestInstance {
         if (!scopeMatchesPattern(this.scope, this.testFile.options.pattern))
             this.ownStatus = 'skipped'
 
+        /** @type {TestCbPayload} */
         this.callbackContext = {
             file: fileFromScope(this.scope),
             scope: this.scope,
             ...this.hooks,
             // expect wrapper that includes a localized "toMatchSnapshot"
             expect: createExpect(this.scope, testFile.options.updateSnapshots),
-            options: this.options
+            options: this.options,
         }
 
         const registerTest = this.registerTestCb.bind(this)
@@ -80,6 +81,8 @@ export class TestInstance {
         } catch (e) {
             this.ownStatus = 'fail'
             this.ownErr = portableError(e)
+            // todo needs test
+            this.options.onError && this.options.onError(this.callbackContext)
             if (this.testFile.options.haltOnErrors) {
                 this.testFile.emitter('finishedTest', {
                     scope: this.scope,

@@ -1,1 +1,1 @@
-export function createExpect(scope: string[]): import("expect/build/types").Expect<import("expect/build/types").MatcherState>;
+export function createExpect(scope: string[], updateSnapshot: 'all' | 'new' | 'none'): import("expect/build/types").Expect<import("expect/build/types").MatcherState>;
