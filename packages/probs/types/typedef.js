@@ -23,6 +23,13 @@
  */
 
 /**
+ * @callback TestCbWithOptions
+ * @param {string} description
+ * @param {Partial<ProbsOptions>} options
+ * @param {(ctx: TestCbPayload)=>void} callback
+ */
+
+/**
  *  @typedef {"fail"|"pass"|"skipped"} Status
  *  @typedef {"pending"|"started"|"finished"} State
  *  @typedef {string[]} Scope

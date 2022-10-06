@@ -17,7 +17,6 @@ const createHook = createPipelineCollection
  *
  * @param {string|string[]} path
  * @param {Partial<ProbsOptions>=} options
- * @returns
  */
 export const probs = async (path, options = {}) => {
     options.path = path

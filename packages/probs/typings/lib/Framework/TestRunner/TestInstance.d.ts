@@ -76,7 +76,7 @@ export class TestInstance {
     emitFinished(): void;
     runChildren(): Promise<void>;
     run(): Promise<void>;
-    registerTestCb(msg: any, callback: any): Promise<void>;
+    registerTestCb(msg: any, ...params: any[]): Promise<void>;
     applyGlobals(): void;
     backupGlobals(): void;
     restoreGlobals(): void;

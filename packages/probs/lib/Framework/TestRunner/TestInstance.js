@@ -109,6 +109,7 @@ export class TestInstance {
             if (child.ownStatus === 'skipped') child.emitFinished()
             else {
                 await this.hooks.beforeEach.run(child.callbackContext)
+                // todo insert await resource queue here 
                 child.emitStarted()
                 await child.run()
                 child.emitFinished()
@@ -128,11 +129,12 @@ export class TestInstance {
         this.restoreGlobals()
     }
 
-    async registerTestCb(msg, callback) {
+    async registerTestCb(msg, ...params) {
+        const callback = params.pop()
+        const options = { ...this.options, ...params.pop() }
+
         this.testFile.emitter('addedTest', { scope: [...this.scope, msg] })
-        this.children.push(
-            new TestInstance(msg, callback, this.testFile, this.options, this),
-        )
+        this.children.push(new TestInstance(msg, callback, this.testFile, options, this))
     }
 
     applyGlobals() {

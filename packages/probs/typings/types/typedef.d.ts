@@ -13,6 +13,7 @@ type TestCbPayload = TestCbPayloadFields & Hooks & {
 };
 type TestState = import('../lib/Framework/StateManager').TestState;
 type TestCb = (description: string, callback: (ctx: TestCbPayload) => void) => any;
+type TestCbWithOptions = (description: string, options: Partial<ProbsOptions>, callback: (ctx: TestCbPayload) => void) => any;
 type Status = "fail" | "pass" | "skipped";
 type State = "pending" | "started" | "finished";
 type Scope = string[];
