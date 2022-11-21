@@ -8,6 +8,8 @@
  *  dir: string,
  *  relativeDir: string
  * }} file
+ * @prop {(comment:string) => void} skip
+ * @prop {(comment:string) => void} comment
  *
  * @typedef {TestCbPayloadFields & Hooks & {options: Partial<ProbsOptions & ProbsConfig>}} TestCbPayload
  */

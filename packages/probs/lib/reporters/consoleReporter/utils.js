@@ -50,15 +50,21 @@ export const testStatusMap = {
  */
 export const formatters = {
     duration: testState => blackBright(testState.duration.toString().padStart(4) + ' ms'),
-    testText: testState => {
+    testText: (testState, spacer) => {
         const { status, ownStatus } = testState
         const nestedDidntPass = ownStatus === 'pass' && status !== 'pass'
-        const _status = nestedDidntPass ? 'nestedDidntPass' : testState.status || 'unresolved'
+        const _status = nestedDidntPass
+            ? 'nestedDidntPass'
+            : testState.status || 'unresolved'
         const statusText = testStatusMap[_status]
         const text = colorMap[_status](testState.name)
         const duration = formatters.duration(testState)
-        const suffix = testState.status === 'skipped' ? ' (skipped)' : ''
-        return `${statusText} ${text} ${suffix} ${duration}`
+        const suffix = testState.status === 'skipped' ? ' (skipped)' : ''        
+        const comments = testState.comments.length ? blackBright(testState.comments
+            .map(comment => `${spacer}// ${comment}`)
+            .join('\r\n')+'\r\n') : ''
+
+        return `${comments}${spacer}${statusText} ${text} ${suffix} ${duration}`
     },
     fileStatusText: testState => {
         // todo file status text can never be partial, ownStatus will always be null

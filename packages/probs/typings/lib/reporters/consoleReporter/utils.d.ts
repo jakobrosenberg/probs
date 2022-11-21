@@ -10,7 +10,7 @@ export namespace colorMap {
     export { red as fail };
     export function unresolved_1(s: any): string;
     export { unresolved_1 as unresolved };
-    export { whiteBright as skipped };
+    export { yellowBright as skipped };
     export { yellowBright as partial };
     export { yellowBright as nestedDidntPass };
 }
@@ -41,5 +41,4 @@ export const formatters: {
 export type Formatter = (testState: import('../../Framework/StateManager').TestState, ...rest: any[]) => any;
 import { green } from "colorette";
 import { red } from "colorette";
-import { whiteBright } from "colorette";
 import { yellowBright } from "colorette";

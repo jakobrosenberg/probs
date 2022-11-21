@@ -236,10 +236,9 @@ export class TestState {
         this.ownState = 'finished'
         this.finishedAt = new Date()
 
-        if (ctx) {
-            this.ownStatus = ctx.ownStatus
-            this.ownErr = ctx.ownErr
-        }
+        this.ownStatus = ctx.ownStatus
+        this.ownErr = ctx.ownErr
+        this.comments = ctx.comments
     }
 
     toJSON() {

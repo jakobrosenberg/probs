@@ -105,6 +105,7 @@ export class TestState {
     get state(): State;
     started(): void;
     finished(ctx: any): void;
+    comments: any;
     toJSON(): TestState;
     #private;
 }

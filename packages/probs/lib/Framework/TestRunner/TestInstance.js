@@ -21,6 +21,7 @@ export class TestInstance {
     status = null
     ownStatus = null
     ownErr = null
+    comments = []
 
     hooks = {
         beforeAll: createParallelHooksCollection(),
@@ -59,6 +60,11 @@ export class TestInstance {
             // expect wrapper that includes a localized "toMatchSnapshot"
             expect: createExpect(this.scope, testFile.options.updateSnapshots),
             options: this.options,
+            comment: msg => this.comments.push(msg),
+            skip: msg => {
+                this.comments.push(msg)
+                this.ownStatus = 'skipped'
+            },
         }
 
         const registerTest = this.registerTestCb.bind(this)
@@ -77,19 +83,26 @@ export class TestInstance {
         try {
             const cbPromise = this.callback(this.callbackContext)
             await addTimeoutToPromise(cbPromise, this.options.timeout)
-            this.ownStatus = 'pass'
+            // this.ownStatus = 'pass'
+            this.ownStatus = this.ownStatus || 'pass'
         } catch (e) {
-            this.ownStatus = 'fail'
-            this.ownErr = portableError(e)
-            // todo needs test
-            this.options.onError && this.options.onError(this.callbackContext)
-            if (this.testFile.options.haltOnErrors) {
-                this.testFile.emitter('finishedTest', {
-                    scope: this.scope,
-                    status: 'fail',
-                    ownErr: this.ownErr,
-                })
-                throw this.ownErr
+            if (e.skipReason) {
+                console.log('skip reason', e.skipReason)
+                this.ownStatus = 'skipped'
+            } else {
+                this.ownStatus = 'fail'
+                this.ownErr = portableError(e)
+                // todo needs test
+                this.options.onError && this.options.onError(this.callbackContext)
+                if (this.testFile.options.haltOnErrors) {
+                    this.testFile.emitter('finishedTest', {
+                        scope: this.scope,
+                        status: 'fail',
+                        ownErr: this.ownErr,
+                        comments: this.comments
+                    })
+                    throw this.ownErr
+                }
             }
         }
     }
@@ -99,7 +112,7 @@ export class TestInstance {
     }
 
     emitFinished() {
-        const payload = cloneKeys(this, ['scope', 'ownStatus', 'ownErr'])
+        const payload = cloneKeys(this, ['scope', 'ownStatus', 'ownErr', 'comments'])
         this.testFile.emitter('finishedTest', payload)
     }
 
@@ -109,7 +122,7 @@ export class TestInstance {
             if (child.ownStatus === 'skipped') child.emitFinished()
             else {
                 await this.hooks.beforeEach.run(child.callbackContext)
-                // todo insert await resource queue here 
+                // todo insert await resource queue here
                 child.emitStarted()
                 await child.run()
                 child.emitFinished()

@@ -7,6 +7,8 @@ type TestCbPayloadFields = {
         dir: string;
         relativeDir: string;
     };
+    skip: (comment: string) => void;
+    comment: (comment: string) => void;
 };
 type TestCbPayload = TestCbPayloadFields & Hooks & {
     options: Partial<ProbsOptions & ProbsConfig>;

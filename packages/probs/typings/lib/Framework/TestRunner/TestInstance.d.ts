@@ -16,6 +16,7 @@ export class TestInstance {
     status: any;
     ownStatus: any;
     ownErr: any;
+    comments: any[];
     hooks: {
         beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         afterAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
