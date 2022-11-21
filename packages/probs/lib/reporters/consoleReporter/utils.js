@@ -25,7 +25,7 @@ export const colorMap = {
     pass: green,
     fail: red,
     unresolved: s => bold(bgRed(whiteBright(s))),
-    skipped: whiteBright,
+    skipped: yellowBright,
     partial: yellowBright,
     nestedDidntPass: yellowBright,
 }
@@ -35,7 +35,7 @@ export const testStatusMap = {
     fail: '❌',
     nestedDidntPass: '❗',
     unresolved: '❓',
-    skipped: bold(bgWhite(black('skipped'))),
+    skipped: bold(yellowBright('!')),
     partial: bold(bgYellow(black('partial'))),
 }
 
@@ -57,7 +57,8 @@ export const formatters = {
         const statusText = testStatusMap[_status]
         const text = colorMap[_status](testState.name)
         const duration = formatters.duration(testState)
-        return `${statusText} ${text} ${duration}`
+        const suffix = testState.status === 'skipped' ? ' (skipped)' : ''
+        return `${statusText} ${text} ${suffix} ${duration}`
     },
     fileStatusText: testState => {
         // todo file status text can never be partial, ownStatus will always be null

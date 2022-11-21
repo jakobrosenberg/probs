@@ -17,10 +17,7 @@ const printTest = testState => {
             )
     }
 
-    if (testState.hasChildren)
-        Object.values(testState.children)
-            .filter(ts => ts.status !== 'skipped')
-            .forEach(printTest)
+    if (testState.hasChildren) Object.values(testState.children).forEach(printTest)
 }
 
 /**
