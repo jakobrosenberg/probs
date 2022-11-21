@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/jakobrosenberg/bestest/compare/v1.1.0...v1.2.0) (2022-11-21)
+
+
+### Features
+
+* optional options as test's 2nd param ([c3580d6](https://github.com/jakobrosenberg/bestest/commit/c3580d6b101ebf43cff8338a79a998dda9838217))
+
+
+### Bug Fixes
+
+* skipped tests weren't showing ([b6ab87c](https://github.com/jakobrosenberg/bestest/commit/b6ab87c4ba2df79cf80ff4522a1d60131fef06d0))
+
 ## [1.1.0](https://github.com/jakobrosenberg/bestest/compare/v1.1.0-20...v1.1.0) (2022-09-02)
 
 
