@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/jakobrosenberg/bestest/compare/v1.3.0...v1.3.1) (2022-11-27)
+
+
+### Bug Fixes
+
+* config was not resolved properly ([cee403e](https://github.com/jakobrosenberg/bestest/commit/cee403ef7a40506f8d023e2e011ad981dd0b5308))
+* host env was missing in worker on recent versions of Node ([b011168](https://github.com/jakobrosenberg/bestest/commit/b01116811336c0fbe98480338c629876d7a67fd1))
+
 ## [1.3.0](https://github.com/jakobrosenberg/bestest/compare/v1.2.0...v1.3.0) (2022-11-21)
 
 
