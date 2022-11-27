@@ -25,6 +25,7 @@ export const worker = (probs, file, options) =>
                 ...(workerOptions.execArgv || []),
             ],
             env: {
+                ...process.env,
                 __probsTestFile: file,
                 __probsConfig: stringifiedOptions,
                 // @ts-ignore
