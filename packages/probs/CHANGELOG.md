@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.2](https://github.com/jakobrosenberg/bestest/compare/v1.3.1...v1.3.2) (2022-11-27)
+
+
+### Bug Fixes
+
+* setupDir issues ([ff9fd62](https://github.com/jakobrosenberg/bestest/commit/ff9fd624d8e91a1ce2d5cf9cbddf3ac039de6de1))
+
 ### [1.3.1](https://github.com/jakobrosenberg/bestest/compare/v1.3.0...v1.3.1) (2022-11-27)
 
 
