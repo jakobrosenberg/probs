@@ -25,11 +25,10 @@ export class Dir {
     }
 
     async refresh() {
-        const setupDir = this.options.setupDir || (x => x)
         this._files = await readdir(this.path)
         this.probs.stateManager.activeTasks.set(this)
         await this.refreshOptions()
-        await setupDir()
+        await this.options.setupDir?.()
         await this.populateChildren()
         this.probs.stateManager.activeTasks.delete(this)
     }
