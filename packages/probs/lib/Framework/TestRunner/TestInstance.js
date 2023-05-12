@@ -8,7 +8,7 @@
 import { createParallelHooksCollection } from 'hookar'
 import assert from 'assert'
 import { addTimeoutToPromise, fileFromScope } from '../../utils/misc.js'
-import { createExpect } from './utils/expect.js'
+import { createExpect } from './utils/createExpect.js'
 import { cloneKeys, portableError, scopeMatchesPattern } from './utils/index.js'
 
 /**
