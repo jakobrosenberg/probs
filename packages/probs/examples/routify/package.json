@@ -10,10 +10,10 @@
     "devDependencies": {
         "@roxi/routify": "^3.0.0-next.1",
         "@sveltejs/vite-plugin-svelte": "^1.0.0-next.13",
+        "esm-loader-svelte": "^1.0.8",
         "mdsvex": "^0.9.3",
         "playwright": "^1.19.2",
         "svelte": "^3.39.0",
-        "svelte-esm-loader": "^0.0.3",
-        "vite": "^2.8.6"
+        "vite": "^3.0.0"
     }
 }
