@@ -38,7 +38,7 @@ export class Dir {
             this.parent?.options || this.probs.options
 
         const file = this._files.find(name => name.match(/probs\.config\..?(j|t)s/))
-        const options = file && await importCfg(resolve(this.path, file))
+        const options = file && (await importCfg(resolve(this.path, file)))
         this.options = { ...parentOptions, ...options }
         const picoOptions = { format: str => str.replace(/^\.\//, '') }
         this.isMatch = picomatch(this.options.glob, picoOptions)
@@ -63,6 +63,8 @@ export class Dir {
                 } else if (this.isMatch(file.replace(/^\.+\//, ''))) {
                     hasChildren = true
                     const testFile = new File(file, this)
+                    // console.log('pushing test file', testFile)
+                    // console.log('setup file', testFile.dir.options.setupFile.toString())
                     this.testFiles.push(testFile)
                     this.probs.onAddedFile.run({
                         scope: [file],
