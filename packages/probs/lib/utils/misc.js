@@ -145,7 +145,7 @@ export const fileFromScope = scope => {
  */
 export const importCfg = async (path, require) => {
     const fullpath = resolve(path)
-    
+
     if (existsSync(fullpath)) {
         const cfg = await import(`file:///${fullpath}`).then(r => r.default)
         if (typeof cfg === 'function') return await cfg()
@@ -161,4 +161,16 @@ export const importCfg = async (path, require) => {
        err['code'] = 'ERR_MODULE_NOT_FOUND'
        throw err
     }
+}
+
+export const importParentCfgs = async (path, cfgName = 'probs.config.js') => {
+    // get all accumulated ancestor directories of path, eg. ['a/b/c', 'a/b', 'a', '']
+    const pathAncestors = dirname(path)
+        .split(/[\\/]/) // split by path separator
+        .map((_, i, arr) => arr.slice(0, i + 1).join('/')) // join by path separator
+        .map(path => `${path}/${cfgName}`) // add filename
+
+    // import all ancestor configs
+    const cfgs = await Promise.all(pathAncestors.map(p => importCfg(p)))
+    return cfgs.reduce((cfg, subCfg) => ({ ...cfg, ...subCfg }), {})
 }

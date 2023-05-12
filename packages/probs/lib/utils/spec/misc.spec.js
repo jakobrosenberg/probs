@@ -1,4 +1,9 @@
-import { createDirname, createQueuedFunctionWrapper, importCfg } from '../misc.js'
+import {
+    createDirname,
+    createQueuedFunctionWrapper,
+    importCfg,
+    importParentCfgs,
+} from '../misc.js'
 import { QueueManager } from '../QueueManager.js'
 
 const __dirname = createDirname(import.meta)
@@ -133,7 +138,19 @@ test('importCfg', () => {
         assert.equal(err.code, 'ERR_MODULE_NOT_FOUND')
     })
     test('should import config', async () => {
-        const result = await importCfg(__dirname + '/_goodCfgSample.js', true)
+        const result = await importCfg(__dirname + '/_goodCfgSample.js')
         assert.deepEqual(result, { msg: 'hello world' })
+    })
+    test('importAllCfg should import all configs', async () => {
+        const result = await importParentCfgs(
+            __dirname + '/_parentCfgs/_parentCfgs/_parentCfgs/_config.js',
+            '_config.js',
+        )
+        assert.deepEqual(result, {
+            level: 'leaf',
+            leafMsg: 'hello world',
+            middleMsg: 'hello world',
+            rootMsg: 'hello world',
+        })
     })
 })
