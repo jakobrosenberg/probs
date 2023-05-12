@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/jakobrosenberg/bestest/compare/v1.3.3...v1.4.0) (2023-05-12)
+
+
+### Features
+
+* beforeEachRecursive ([a0769df](https://github.com/jakobrosenberg/bestest/commit/a0769df8404c190ab4081d5308f5e2c239ebca4f))
+
+
+### Bug Fixes
+
+* expect issues ([43dcc99](https://github.com/jakobrosenberg/bestest/commit/43dcc99c3ff17fb07fbe7d6b927cc0ea20fcc79b))
+* probs.config.js should be read recursively inside tests ([8ca0463](https://github.com/jakobrosenberg/bestest/commit/8ca04632eaf4f8ceeadd01c6114f1ec110f46d3c))
+
 ### [1.3.3](https://github.com/jakobrosenberg/bestest/compare/v1.3.2...v1.3.3) (2022-12-04)
 
 ### [1.3.2](https://github.com/jakobrosenberg/bestest/compare/v1.3.1...v1.3.2) (2022-11-27)
