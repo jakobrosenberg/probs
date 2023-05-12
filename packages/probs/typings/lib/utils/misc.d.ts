@@ -23,3 +23,4 @@ export function fileFromScope(scope: any): {
     dir: string;
 };
 export function importCfg(path: string, require?: boolean | undefined): Promise<any>;
+export function importParentCfgs(path: any, cfgName?: string): Promise<any>;

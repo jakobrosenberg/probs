@@ -21,9 +21,12 @@ export class TestInstance {
         beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         afterAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         beforeEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
+        beforeEachRecursive: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         afterEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
+        afterEachRecursive: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
     };
     get scope(): any;
+    get parents(): any;
     globalsBackup: {};
     name: string;
     testFile: import("./TestFile").TestFile;
@@ -65,7 +68,9 @@ export class TestInstance {
         beforeAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         afterAll: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         beforeEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
+        beforeEachRecursive: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         afterEach: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
+        afterEachRecursive: import("hookar").CollectionSyncVoid<any> | import("hookar").CollectionAsyncVoid<any>;
         test: any;
         it: any;
         describe: any;
