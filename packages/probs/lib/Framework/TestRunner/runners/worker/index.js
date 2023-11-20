@@ -8,6 +8,9 @@ const __dirname = createDirname(import.meta)
  */
 export const worker = (probs, file, options) =>
     new Promise((resolve, reject) => {
+        const time = Date.now()
+        let killReason = null
+
         probs.callEvent('openedFile', { scope: [file] })
 
         const workerOptions = options.worker ? options.worker({ file }) : {}
@@ -35,6 +38,12 @@ export const worker = (probs, file, options) =>
 
         worker.on('message', ({ eventName, ...args }) => {
             probs.callEvent(eventName, { ...args })
+
+            if (args.ownErr?.code === 'ERR_TIMEOUT') {
+                probs.callEvent('closedFile', { scope: [file], time: Date.now() - time })
+                killReason = 'timeout'
+                worker.terminate()
+            }
         })
 
         worker.on('error', err => {
@@ -42,7 +51,13 @@ export const worker = (probs, file, options) =>
             reject(err)
         })
         worker.on('exit', code => {
-            if (code !== 0) reject(new Error(`Worker stopped with exit code ${code}`))
-            else resolve()
+            if (code !== 0) {
+                if (killReason === 'timeout') {
+                    resolve()
+                    console.log(
+                        `Worker for ${file} was killed because a timeout was detected.`,
+                    )
+                } else reject(new Error(`Worker stopped with exit code ${code}`))
+            } else resolve()
         })
     })

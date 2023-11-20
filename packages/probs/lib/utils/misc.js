@@ -98,6 +98,14 @@ export const createQueuedFunctionWrapper = queueTime => {
     return queueFunction
 }
 
+export class TimeoutError extends Error {
+    constructor(message) {
+        super(message)
+        this.name = 'TimeoutError'
+        this.code = 'ERR_TIMEOUT'
+    }
+}
+
 export const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)
 
 /**
@@ -116,7 +124,7 @@ export const addTimeoutToPromise = (promise, time, error) => {
     return /** @type {P} */ (
         new Promise((resolve, reject) => {
             const timeoutHandle = setTimeout(
-                () => reject(error || new Error(`timed out (${time} ms)`)),
+                () => reject(error || new TimeoutError(`timed out (${time} ms)`)),
                 Number(time),
             )
 

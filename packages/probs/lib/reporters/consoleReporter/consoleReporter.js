@@ -10,7 +10,7 @@ const printTest = testState => {
     if (testState.isFile) console.log(formatters.fileText(testState))
     else {
         console.log(formatters.testText(testState, ''.padStart(indentation, ' ')))
-        if (testState.ownErr)
+        if (testState.ownErr && testState.ownErr.code !== 'ERR_TIMEOUT')
             console.error(
                 `${testState.ownErr.name}: ${testState.ownErr.message}`,
                 testState.ownErr.stack,

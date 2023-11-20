@@ -59,10 +59,19 @@ export const formatters = {
         const statusText = testStatusMap[_status]
         const text = colorMap[_status](testState.name)
         const duration = formatters.duration(testState)
-        const suffix = testState.status === 'skipped' ? ' (skipped)' : ''        
-        const comments = testState.comments.length ? blackBright(testState.comments
-            .map(comment => `${spacer}// ${comment}`)
-            .join('\r\n')+'\r\n') : ''
+        const suffix =
+            testState.status === 'skipped'
+                ? ' (skipped)'
+                : testState.ownErr?.code === 'ERR_TIMEOUT'
+                ? ' (timed out)'
+                : ''
+        const comments = testState.comments.length
+            ? blackBright(
+                  testState.comments
+                      .map(comment => `${spacer}// ${comment}`)
+                      .join('\r\n') + '\r\n',
+              )
+            : ''
 
         return `${comments}${spacer}${statusText} ${text} ${suffix} ${duration}`
     },
